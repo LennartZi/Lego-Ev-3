@@ -1,7 +1,6 @@
 package ev3;
 
 import lejos.hardware.BrickFinder; 
-import lejos.hardware.Keys; 
 import lejos.hardware.ev3.EV3; 
 import lejos.hardware.lcd.TextLCD; 
 import lejos.hardware.port.SensorPort; 
@@ -12,17 +11,15 @@ public class ColorSensorTest {
  
  public static void main(String[] args) { 
   final EV3 ev3 = (EV3) BrickFinder.getLocal(); 
-  TextLCD lcd = ev3.getTextLCD(); 
-  Keys keys = ev3.getKeys(); 
+  TextLCD lcd = ev3.getTextLCD();  
  
-  // Color sensor 
   EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S3); 
   SensorMode color = colorSensor.getRGBMode(); 
   float[] colorSample = new float[color.sampleSize()]; 
   lcd.drawInt(colorSample.length, 0, 2); 
-  int key; 
   long startTime = System.currentTimeMillis(); 
   long duration; 
+  colorSensor.setFloodlight(true); 
  
   do { 
    duration = System.currentTimeMillis() - startTime; 
@@ -31,9 +28,8 @@ public class ColorSensorTest {
    lcd.drawString("" + colorSample[1], 0, 4); 
    lcd.drawString("" + colorSample[2], 0, 5); 
     
-   lcd.drawString("" + isReflecting(colorSample), 0, 6); 
-    
-//   key = keys.waitForAnyPress(); 
   } while (duration < 60000); 
+  }
+}
  
- } 
+ 
