@@ -29,7 +29,8 @@ public class ColorSensorTest {
    lcd.drawString("" + colorSample[2], 0, 5); 
     
   } while (duration < 60000); 
-  }
+  colorSensor.close();
+ }
 }
  
  
