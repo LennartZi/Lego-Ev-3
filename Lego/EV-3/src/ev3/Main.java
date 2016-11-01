@@ -12,21 +12,24 @@ import lejos.robotics.SampleProvider;
 
 public class Main 
 {
-	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A); //die (p)latform
-	static RegulatedMotor g = new EV3LargeRegulatedMotor(MotorPort.B); //das (g)reifding
+	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A);	//die (p)latform
+	static RegulatedMotor g = new EV3LargeRegulatedMotor(MotorPort.B);	//das (g)reifding
 	public static void main(String[] args)
 	{
-		String[][] cubeArray = new String[26][3]; // Array 26(steine)*3(mögliche Farben)
-		String[][] tauschArray = new String[26][3]; // Array zum drehen	
-		for(int i = 0; i < cubeArray.length; i++)
-		{
-			for(int j = 0; j < cubeArray[i].length; j++)
-			{				
-				tauschArray [i][j] = cubeArray[i][j];
-			}
-		}
+		String[] cubeArray = new String[54];	// 54 oberflächen mit Farben
+		String[] tauschArray = new String[54];	// Array zum temporären speichern beim drehen
+		
+		cubeArray [48] = "white";	//die mitten werden manuell festgelegt
+		cubeArray [49] = "green";
+		cubeArray [50] = "red";
+		cubeArray [51] = "blue";
+		cubeArray [52] = "orange";
+		cubeArray [53] = "yellow";
+		
+		drehen(cubeArray, tauschArray);
+		drehenGanz(cubeArray, tauschArray);
 	}
-	public static String scan() //scant.....
+	public static String scan()	//scant.....
 	{
 		Port sensorPort = LocalEV3.get().getPort("S1");            
 		EV3ColorSensor colorSensor = new EV3ColorSensor(sensorPort);
@@ -36,7 +39,7 @@ public class Main
 		
 		String colour;
 		colorSensor.fetchSample(sample, 0);
-		if(sample[0]<0.14 && sample[0]>0.2 && sample[1]<0.14 && sample[1]>0.2 && sample[2]<0.14 && sample[2]>0.2){ //gleicht die drei farbwerte ab
+		if(sample[0]<0.14 && sample[0]>0.2 && sample[1]<0.14 && sample[1]>0.2 && sample[2]<0.14 && sample[2]>0.2){	//gleicht die drei farbwerte ab
 			colour = "white";
 			LCD.drawString(colour, 1, 1);
 			colorSensor.close();
@@ -78,51 +81,53 @@ public class Main
 			return "error";
 		}
 	}
-	public static void drehen(String tauschArray[][], String cubeArray[][])
+	private static String[] drehen(String cubeArray[], String tauschArray[])	//zum benutzen "drehen(cubeArray, tauschArray);"
 	{
+		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
-		{
-			for(int j = 0; j < cubeArray[i].length; j++)
-			{				
-				tauschArray [i][j] = cubeArray[i][j];
-			}
+		{			
+			tauschArray[i] = cubeArray[i];
 		}
-		//ecken Links
-		tauschArray[17][0] = cubeArray [19][1];
-		tauschArray[19][1] = cubeArray [21][1];
-		tauschArray[21][1] = cubeArray [23][1];
-		tauschArray[23][1] = cubeArray [17][0];
-		//ecken Rechts
-		tauschArray[19][0] = cubeArray [21][0];
-		tauschArray[21][0] = cubeArray [23][0];
-		tauschArray[23][0] = cubeArray [17][1];
-		tauschArray[17][1] = cubeArray [19][0];
-		//kanten
-		tauschArray[18][0] = cubeArray [20][0];
-		tauschArray[20][0] = cubeArray [22][0];
-		tauschArray[22][0] = cubeArray [24][0];
-		tauschArray[24][0] = cubeArray [18][0];
-		//unten
-		tauschArray[17][2] = cubeArray [19][2];
-		tauschArray[19][2] = cubeArray [21][2];
-		tauschArray[21][2] = cubeArray [23][2];
-		tauschArray[23][2] = cubeArray [17][2];
-		//kanten unten
-		tauschArray[18][1] = cubeArray [20][1];
-		tauschArray[20][1] = cubeArray [22][1];
-		tauschArray[22][1] = cubeArray [24][1];
-		tauschArray[18][1] = cubeArray [24][1];
-		
-		
-		for(int i = 0; i < cubeArray.length; i++)
+		for (int i = 28; i < 48; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
-			for(int j = 0; j < cubeArray[i].length; j++)
+			j++;
+			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
 			{
-				cubeArray [i][j] = tauschArray[i][j];
+				cubeArray [i] = tauschArray [i-3];
+			}
+			else	//alle anderen an den eins weiter
+			{
+				cubeArray [i] = tauschArray[i+1];
 			}
 		}
-		p.setAcceleration(4500);
-		p.rotate(90);
+		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
+		g.rotate(45);
+		p.rotate(90);	//das physische drehen
+		g.rotate(-45);
+	return cubeArray;	//rückgabe des nun gedrehten Arrays
+	}
+	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//zum benutzen "drehen(cubeArray, tauschArray);"
+	{
+		int j = 0; 
+		for(int i = 0; i < cubeArray.length; i++)
+		{			
+			tauschArray[i] = cubeArray[i];
+		}
+		for (int i = 0; i < 48; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
+		{
+			j++;
+			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
+			{
+				cubeArray [i] = tauschArray [i-3];
+			}
+			else	//alle anderen an den eins weiter
+			{
+				cubeArray [i] = tauschArray[i+1];
+			}
+		}
+		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
+		p.rotate(90);	//das physische drehen
+	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
 }
 
