@@ -19,25 +19,18 @@ public class Main
 		String[] cubeArray = new String[54];	// 54 oberflächen mit Farben
 		String[] tauschArray = new String[54];	// Array zum temporären speichern beim drehen
 		
-<<<<<<< HEAD
-		cubeArray [48] = "green";	//die mitten werden manuell festgelegt
-		cubeArray [59] = "red";
+		cubeArray [48] = "green";	//die mitten werden festgelegt
+		cubeArray [49] = "red";
 		cubeArray [50] = "blue";
 		cubeArray [51] = "orange";
-		cubeArray [52] = "white";	
-=======
-		cubeArray [48] = "white";	//die mitten werden manuell festgelegt
-		cubeArray [49] = "green";
-		cubeArray [50] = "red";
-		cubeArray [51] = "blue";
-		cubeArray [52] = "orange";
->>>>>>> 5325c6aedeef9957b348d553b1d3cdc06f3b2b0e
+		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";
 		
 		drehen(cubeArray, tauschArray);
 		drehenGanz(cubeArray, tauschArray);
+		kippen(cubeArray, tauschArray);	//UNFERTIG
 	}
-	public static String scan()	//scant.....
+	public static String colours()	//ordnet die richtige farbe zu
 	{
 		Port sensorPort = LocalEV3.get().getPort("S1");            
 		EV3ColorSensor colorSensor = new EV3ColorSensor(sensorPort);
@@ -89,7 +82,7 @@ public class Main
 			return "error";
 		}
 	}
-	private static String[] drehen(String cubeArray[], String tauschArray[])	//zum benutzen "drehen(cubeArray, tauschArray);"
+	private static String[] drehen(String cubeArray[], String tauschArray[])	//dreht unten|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
@@ -97,8 +90,6 @@ public class Main
 			tauschArray[i] = cubeArray[i];
 		}
 		for (int i = 28; i < 48; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
-<<<<<<< HEAD
-=======
 		{
 			j++;
 			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
@@ -116,15 +107,14 @@ public class Main
 		g.rotate(-45);
 	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
-	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//zum benutzen "drehen(cubeArray, tauschArray);"
+	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 0; i < 48; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
->>>>>>> 5325c6aedeef9957b348d553b1d3cdc06f3b2b0e
+		for (int i = 0; i < 52; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
 			j++;
 			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
@@ -132,34 +122,6 @@ public class Main
 				cubeArray [i] = tauschArray [i-3];
 			}
 			else	//alle anderen an den eins weiter
-<<<<<<< HEAD
-			{
-				cubeArray [i] = tauschArray[i+1];
-			}
-		}
-		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
-		g.rotate(45);
-		p.rotate(90);	//das physische drehen
-		g.rotate(-45);
-	return cubeArray;	//rückgabe des nun gedrehten Arrays
-	}
-	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//zum benutzen "drehen(cubeArray, tauschArray);"
-	{
-		int j = 0; 
-		for(int i = 0; i < cubeArray.length; i++)
-		{			
-			tauschArray[i] = cubeArray[i];
-		}
-		for (int i = 0; i < 52; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 51 der letzte zu tauschende stein
-		{
-			j++;
-			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
-			{
-				cubeArray [i] = tauschArray [i-3];
-			}
-			else	//alle anderen an den eins weiter
-=======
->>>>>>> 5325c6aedeef9957b348d553b1d3cdc06f3b2b0e
 			{
 				cubeArray [i] = tauschArray[i+1];
 			}
@@ -168,16 +130,16 @@ public class Main
 		p.rotate(90);	//das physische drehen
 	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
-<<<<<<< HEAD
-}
-=======
-}
-
-/*for(int i = 0; i < cubeArray.length; i++)
-{
-	for(int j = 0; j < cubeArray[i].length; j++)
-	{	
-
+	private static String[] kippen(String cubeArray[], String tauschArray[])	//kippt (unfertig)|zum benutzen: "kippen(cubeArray, tauschArray);"
+	{
+		for(int i = 0; i < cubeArray.length; i++)
+		{			
+			tauschArray[i] = cubeArray[i];
+		}
+		for (int i = 0; i < cubeArray.length; i++)
+		{
+				cubeArray [i] = tauschArray[i+1];
+		}
+		return cubeArray;
 	}
-}*/
->>>>>>> 5325c6aedeef9957b348d553b1d3cdc06f3b2b0e
+}
