@@ -26,11 +26,12 @@ public class Main
 		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";
 		
+		colours();
 		drehen(cubeArray, tauschArray);
 		drehenGanz(cubeArray, tauschArray);
 		kippen(cubeArray, tauschArray);	//UNFERTIG
 	}
-	public static String colours()	//ordnet die richtige farbe zu
+	private static String colours()	//ordnet die richtige farbe zu
 	{
 		Port sensorPort = LocalEV3.get().getPort("S1");            
 		EV3ColorSensor colorSensor = new EV3ColorSensor(sensorPort);
