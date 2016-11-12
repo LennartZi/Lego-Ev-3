@@ -14,6 +14,7 @@ public class Main
 {
 	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A);	//die (p)latform
 	static RegulatedMotor g = new EV3LargeRegulatedMotor(MotorPort.B);	//das (g)reifding
+	
 	public static void main(String[] args)
 	{
 		String[] cubeArray = new String[54];	// 54 oberflächen mit Farben
@@ -29,8 +30,9 @@ public class Main
 		colours();
 		drehen(cubeArray, tauschArray);
 		drehenGanz(cubeArray, tauschArray);
-		kippen(cubeArray, tauschArray);	//UNFERTIG
+		kippen(cubeArray, tauschArray);	//(welche bewegung zum drehen??)
 	}
+	
 	private static String colours()	//ordnet die richtige farbe zu
 	{
 		Port sensorPort = LocalEV3.get().getPort("S1");            
@@ -83,6 +85,7 @@ public class Main
 			return "error";
 		}
 	}
+	
 	private static String[] drehen(String cubeArray[], String tauschArray[])	//dreht unten|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
 		int j = 0; 
@@ -108,6 +111,7 @@ public class Main
 		g.rotate(-45);
 	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
+	
 	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
 		int j = 0; 
@@ -131,16 +135,80 @@ public class Main
 		p.rotate(90);	//das physische drehen
 	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
-	private static String[] kippen(String cubeArray[], String tauschArray[])	//kippt (unfertig)|zum benutzen: "kippen(cubeArray, tauschArray);"
+	
+	private static String[] kippen(String cubeArray[], String tauschArray[])	//kippt (welche bewegung zum drehen??)|zum benutzen: "kippen(cubeArray, tauschArray);"
 	{
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 0; i < cubeArray.length; i++)
-		{
-				cubeArray [i] = tauschArray[i+1];
-		}
+		
+		//Oben->links
+		cubeArray [28] = tauschArray[0];
+		cubeArray [20] = tauschArray[4];
+		cubeArray [8]  = tauschArray[1];
+		cubeArray [12] = tauschArray[5];		
+		cubeArray [16] = tauschArray[2];
+		cubeArray [24] = tauschArray[6];
+		cubeArray [36] = tauschArray[3];
+		cubeArray [32] = tauschArray[7];
+		cubeArray [48] = tauschArray[52];
+		
+		//Links->Unten
+		cubeArray [42] = tauschArray[28];
+		cubeArray [46] = tauschArray[20];
+		cubeArray [43] = tauschArray[8];
+		cubeArray [47] = tauschArray[12];	
+		cubeArray [40] = tauschArray[16];
+		cubeArray [44] = tauschArray[24];
+		cubeArray [41] = tauschArray[36];
+		cubeArray [45] = tauschArray[32];	
+		cubeArray [53] = tauschArray[48];	
+		//Unten->Rechts
+		cubeArray [18] = tauschArray[42];
+		cubeArray [26] = tauschArray[46];
+		cubeArray [38] = tauschArray[43];
+		cubeArray [34] = tauschArray[47];	
+		cubeArray [30] = tauschArray[40];
+		cubeArray [22] = tauschArray[44];
+		cubeArray [10] = tauschArray[41];
+		cubeArray [14] = tauschArray[45];
+		cubeArray [50] = tauschArray[53];
+		
+		//Rechts->oben
+		cubeArray [0]  = tauschArray[18];
+		cubeArray [4]  = tauschArray[26];
+		cubeArray [1]  = tauschArray[38];
+		cubeArray [5]  = tauschArray[34];
+		cubeArray [2]  = tauschArray[30];
+		cubeArray [6]  = tauschArray[22];
+		cubeArray [3]  = tauschArray[10];
+		cubeArray [7]  = tauschArray[14];
+		cubeArray [52] = tauschArray[50];
+		
+		//vorn
+		cubeArray [17] = tauschArray [37];
+		cubeArray [37] = tauschArray [29];
+		cubeArray [29] = tauschArray [9];
+		cubeArray [9]  = tauschArray [17];
+		cubeArray [13] = tauschArray [25];
+		cubeArray [25] = tauschArray [33];
+		cubeArray [33] = tauschArray [21];
+		cubeArray [21] = tauschArray [13];
+		
+		//hinten
+		cubeArray [11] = tauschArray [19];
+		cubeArray [19] = tauschArray [39];
+		cubeArray [39] = tauschArray [31];
+		cubeArray [31] = tauschArray [11];
+		cubeArray [15] = tauschArray [27];
+		cubeArray [27] = tauschArray [35];
+		cubeArray [35] = tauschArray [23];
+		cubeArray [23] = tauschArray [15];
+		
+		g.rotate(-300);
+		g.rotate(300);
+		
 		return cubeArray;
 	}
 }
