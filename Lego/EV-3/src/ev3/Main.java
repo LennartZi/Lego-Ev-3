@@ -112,7 +112,7 @@ public class Main
 	return cubeArray;	//rückgabe des nun gedrehten Arrays
 	}
 	
-	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehen(cubeArray, tauschArray);"
+	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
 	{
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
