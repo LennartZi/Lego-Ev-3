@@ -27,10 +27,17 @@ public class Main
 		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";
 		
-		colours();
+		scan(cubeArray);	//unfertig
 		drehen(cubeArray, tauschArray);
 		drehenGanz(cubeArray, tauschArray);
 		kippen(cubeArray, tauschArray);	//(welche bewegung zum drehen??)
+		pll(cubeArray, tauschArray);
+	}
+	
+	private static String[] scan(String cubeArray[])	//Unfertig
+	{
+		colours();
+		return cubeArray;
 	}
 	
 	private static String colours()	//ordnet die richtige farbe zu
@@ -210,5 +217,69 @@ public class Main
 		g.rotate(300);
 		
 		return cubeArray;
+	}
+
+	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
+	{		
+		//PLL 1
+		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
+			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+			&& cubeArray[9] == cubeArray[49] && cubeArray[16] == cubeArray[48]
+			&&cubeArray[18] == cubeArray[49]){
+			//Lw' U R' D2 R U' R' D2 R2
+		}
+		else if(){
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			//Lw' U R' D2 R U' R' D2 R2
+		}
+		else if(){
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			//Lw' U R' D2 R U' R' D2 R2
+		}
+		else if(){
+			drehenGanz(cubeArray, tauschArray);
+			//Lw' U R' D2 R U' R' D2 R2
+		}
+		
+		//PLL2
+		
+		//PLL"0"
+		if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
+				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
+				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
+				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
+				&& cubeArray[8] == cubeArray[20]){
+			LCD.drawString("fertig", 2, 2);
+		}
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
+				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
+				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
+				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
+				&& cubeArray[8] == cubeArray[21]){
+			//U'
+			LCD.drawString("fertig", 2, 2);
+		}
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
+				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
+				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
+				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
+				&& cubeArray[8] == cubeArray[22]){
+			//U2
+			LCD.drawString("fertig", 2, 2);
+		}
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
+				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
+				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
+				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
+				&& cubeArray[8] == cubeArray[23]){
+			//U
+			LCD.drawString("fertig", 2, 2);
+		}
+		
+		return cubeArray;
+		
 	}
 }
