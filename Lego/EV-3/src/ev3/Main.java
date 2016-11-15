@@ -17,8 +17,8 @@ public class Main
 	
 	public static void main(String[] args)
 	{
-		String[] cubeArray = new String[54];	// 54 oberflächen mit Farben
-		String[] tauschArray = new String[54];	// Array zum temporären speichern beim drehen
+		String[] cubeArray = new String[54];	// 54 oberflï¿½chen mit Farben
+		String[] tauschArray = new String[54];	// Array zum temporï¿½ren speichern beim drehen
 		
 		cubeArray [48] = "green";	//die mitten werden festgelegt
 		cubeArray [49] = "red";
@@ -100,10 +100,10 @@ public class Main
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 28; i < 48; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
+		for (int i = 28; i < 48; i++)	//nur benï¿½tigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
 			j++;
-			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
+			if(j % 4 == 0)	//jeder vierte stein ï¿½bergibt seine attribute an den stein 3 vor ihm
 			{
 				cubeArray [i] = tauschArray [i-3];
 			}
@@ -116,7 +116,7 @@ public class Main
 		g.rotate(45);
 		p.rotate(90);	//das physische drehen
 		g.rotate(-45);
-	return cubeArray;	//rückgabe des nun gedrehten Arrays
+	return cubeArray;	//rï¿½ckgabe des nun gedrehten Arrays
 	}
 	
 	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
@@ -126,10 +126,10 @@ public class Main
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 0; i < 52; i++)	//nur benötigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
+		for (int i = 0; i < 52; i++)	//nur benï¿½tigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
 			j++;
-			if(j % 4 == 0)	//jeder vierte stein übergibt seine attribute an den stein 3 vor ihm
+			if(j % 4 == 0)	//jeder vierte stein ï¿½bergibt seine attribute an den stein 3 vor ihm
 			{
 				cubeArray [i] = tauschArray [i-3];
 			}
@@ -140,7 +140,7 @@ public class Main
 		}
 		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
 		p.rotate(90);	//das physische drehen
-	return cubeArray;	//rückgabe des nun gedrehten Arrays
+	return cubeArray;	//rï¿½ckgabe des nun gedrehten Arrays
 	}
 	
 	private static String[] kippen(String cubeArray[], String tauschArray[])	//kippt (welche bewegung zum drehen??)|zum benutzen: "kippen(cubeArray, tauschArray);"
@@ -149,7 +149,6 @@ public class Main
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		
 		//Oben->links
 		cubeArray [28] = tauschArray[0];
 		cubeArray [20] = tauschArray[4];
@@ -224,27 +223,66 @@ public class Main
 		//PLL 1
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
 			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
-			&& cubeArray[9] == cubeArray[49] && cubeArray[16] == cubeArray[48]
-			&&cubeArray[18] == cubeArray[49]){
+			&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+			&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
 			//Lw' U R' D2 R U' R' D2 R2
 		}
-		else if(){
+		else if(cubeArray[17] == cubeArray[48] && cubeArray[8] == cubeArray[48]
+				&& cubeArray[10] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+				&& cubeArray[16] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+				&& cubeArray[9] == cubeArray[51] && cubeArray[19] == cubeArray[51]){
 			drehenGanz(cubeArray, tauschArray);
 			drehenGanz(cubeArray, tauschArray);
 			drehenGanz(cubeArray, tauschArray);
 			//Lw' U R' D2 R U' R' D2 R2
 		}
-		else if(){
+		else if(cubeArray[9] == cubeArray[48] && cubeArray[17] == cubeArray[48]
+				&& cubeArray[10] == cubeArray[49] && cubeArray[19] == cubeArray[49]
+				&& cubeArray[18] == cubeArray[50] && cubeArray[8] == cubeArray[50]
+				&& cubeArray[11] == cubeArray[51] && cubeArray[16] == cubeArray[51]){
 			drehenGanz(cubeArray, tauschArray);
 			drehenGanz(cubeArray, tauschArray);
 			//Lw' U R' D2 R U' R' D2 R2
 		}
-		else if(){
+		else if(cubeArray[9] == cubeArray[48] && cubeArray[18] == cubeArray[48]
+				&& cubeArray[17] == cubeArray[49] && cubeArray[11] == cubeArray[49]
+				&& cubeArray[10] == cubeArray[50] && cubeArray[19] == cubeArray[50]
+				&& cubeArray[8] == cubeArray[51] && cubeArray[16] == cubeArray[51]){
 			drehenGanz(cubeArray, tauschArray);
 			//Lw' U R' D2 R U' R' D2 R2
 		}
 		
 		//PLL2
+		if(cubeArray[11] == cubeArray[48] && cubeArray[19] == cubeArray[48]
+				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
+				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
+				&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
+			//
+		}
+		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
+				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
+				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
+				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			//
+		}
+		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
+				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
+				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
+				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
+			drehenGanz(cubeArray, tauschArray);
+			drehenGanz(cubeArray, tauschArray);
+			//
+		}
+		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
+				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
+				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
+				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
+			drehenGanz(cubeArray, tauschArray);
+			//
+		}
 		
 		//PLL"0"
 		if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
