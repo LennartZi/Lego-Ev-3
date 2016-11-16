@@ -219,104 +219,83 @@ public class Main
 	}
 
 	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
-	{		
-		//PLL 1
+	{
+		int i = 0;
+		while(i > 3){
+						
+		//PLL 01
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
 			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
 			&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
 			&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
+			if(i == 1){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 2){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 3){
+				drehenGanz(cubeArray, tauschArray);
+			}
 			//Lw' U R' D2 R U' R' D2 R2
-		}
-		else if(cubeArray[17] == cubeArray[48] && cubeArray[8] == cubeArray[48]
-				&& cubeArray[10] == cubeArray[49] && cubeArray[18] == cubeArray[49]
-				&& cubeArray[16] == cubeArray[50] && cubeArray[11] == cubeArray[50]
-				&& cubeArray[9] == cubeArray[51] && cubeArray[19] == cubeArray[51]){
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			//Lw' U R' D2 R U' R' D2 R2
-		}
-		else if(cubeArray[9] == cubeArray[48] && cubeArray[17] == cubeArray[48]
-				&& cubeArray[10] == cubeArray[49] && cubeArray[19] == cubeArray[49]
-				&& cubeArray[18] == cubeArray[50] && cubeArray[8] == cubeArray[50]
-				&& cubeArray[11] == cubeArray[51] && cubeArray[16] == cubeArray[51]){
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			//Lw' U R' D2 R U' R' D2 R2
-		}
-		else if(cubeArray[9] == cubeArray[48] && cubeArray[18] == cubeArray[48]
-				&& cubeArray[17] == cubeArray[49] && cubeArray[11] == cubeArray[49]
-				&& cubeArray[10] == cubeArray[50] && cubeArray[19] == cubeArray[50]
-				&& cubeArray[8] == cubeArray[51] && cubeArray[16] == cubeArray[51]){
-			drehenGanz(cubeArray, tauschArray);
-			//Lw' U R' D2 R U' R' D2 R2
+			break;
 		}
 		
-		//PLL2
+		//PLL 02
 		if(cubeArray[11] == cubeArray[48] && cubeArray[19] == cubeArray[48]
 				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
 				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
 				&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
-			//
-		}
-		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
-				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
-				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
-				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			//
-		}
-		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
-				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
-				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
-				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
-			drehenGanz(cubeArray, tauschArray);
-			drehenGanz(cubeArray, tauschArray);
-			//
-		}
-		else if(cubeArray[] == cubeArray[48] && cubeArray[] == cubeArray[48]
-				&& cubeArray[] == cubeArray[49] && cubeArray[] == cubeArray[49]
-				&& cubeArray[] == cubeArray[50] && cubeArray[] == cubeArray[50]
-				&& cubeArray[] == cubeArray[51] && cubeArray[] == cubeArray[51]{
-			drehenGanz(cubeArray, tauschArray);
-			//
+			if(i == 1){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 2){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 3){
+				drehenGanz(cubeArray, tauschArray);
+			}
+			//Rw U' L D2 L' U L D2 L2
+			break;
 		}
 		
-		//PLL"0"
-		if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
-				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
-				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
-				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
-				&& cubeArray[8] == cubeArray[20]){
-			LCD.drawString("fertig", 2, 2);
-		}
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
-				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
-				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
-				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
-				&& cubeArray[8] == cubeArray[21]){
-			//U'
-			LCD.drawString("fertig", 2, 2);
-		}
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
-				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
-				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
-				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
-				&& cubeArray[8] == cubeArray[22]){
-			//U2
-			LCD.drawString("fertig", 2, 2);
-		}
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[8] == cubeArray[16] 
-				&& cubeArray[9] == cubeArray[13] && cubeArray[9] == cubeArray[17] 
-				&& cubeArray[10] == cubeArray[14] && cubeArray[10] == cubeArray[18] 
-				&& cubeArray[11] == cubeArray[15] && cubeArray[11] == cubeArray[19]
-				&& cubeArray[8] == cubeArray[23]){
-			//U
-			LCD.drawString("fertig", 2, 2);
+		//PLL 03
+		if(cubeArray[9] == cubeArray[48] && cubeArray[19] == cubeArray[48]
+				&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+				&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+				&& cubeArray[16] == cubeArray[51] && cubeArray[10] == cubeArray[51]){
+			if(i == 1){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 2){
+				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);
+			}
+			else if(i == 3){
+				drehenGanz(cubeArray, tauschArray);
+			}
+			//(r' R' U') (L D' L' U L) (R U' R' D R) U
 		}
 		
+		//PLL 04
+		
+		//PLL 05
+		
+		//PLL 06
+		
+		//PLL 07
+		
+		drehenGanz(cubeArray, tauschArray);
+		i++;
+		}
 		return cubeArray;
 		
 	}
