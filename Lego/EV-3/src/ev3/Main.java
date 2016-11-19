@@ -217,6 +217,150 @@ public class Main
 		
 		return cubeArray;
 	}
+	
+	//Fabian
+	
+    private static void F(String cubeArray[],String tauschArray[]) 
+    {
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void FP(String cubeArray[],String tauschArray[]) 
+    {
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+      
+    private static void B(String cubeArray[],String tauschArray[]) 
+    {
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void BP(String cubeArray[],String tauschArray[])
+    {
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+        
+    private static void L(String cubeArray[],String tauschArray[]) 
+    {
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void LP(String cubeArray[],String tauschArray[])
+    {
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    }
+       
+    private static void R(String cubeArray[],String tauschArray[])
+    {
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    }
+    
+    private static void RP(String cubeArray[],String tauschArray[])
+    {
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    drehenGanz(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    }
+       
+    private static void U(String cubeArray[],String tauschArray[])
+    {
+    kippen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);        
+    }
+    
+    private static void UP(String cubeArray[],String tauschArray[])
+    {
+    kippen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);
+    kippen(cubeArray, tauschArray);        
+    }
+	
+    private static void D(String cubeArray[],String tauschArray[])
+    {
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    drehen(cubeArray, tauschArray);
+    }
+    
+    private static void DP(String cubeArray[], String tauschArray[])
+    {
+    drehen(cubeArray, tauschArray);
+    }
+    
+    // F=Front, B=Back, L=Left, R=Right, U= Up, D=Down 
+    // P=Prime, also gegen den Uhrzeigersinn
+
+
+
 
 	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
 	{
@@ -241,7 +385,6 @@ public class Main
 				drehenGanz(cubeArray, tauschArray);
 			}
 			//Lw' U R' D2 R U' R' D2 R2
-			break;
 		}
 		
 		//PLL 02
@@ -262,7 +405,6 @@ public class Main
 				drehenGanz(cubeArray, tauschArray);
 			}
 			//Rw U' L D2 L' U L D2 L2
-			break;
 		}
 		
 		//PLL 03
