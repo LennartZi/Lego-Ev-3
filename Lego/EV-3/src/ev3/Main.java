@@ -1,23 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @ShinanSenpai
-Configure email settings 
-Please verify your email address to access all of GitHub's features.
-An email containing verification instructions was sent to fenderfabian@web.de.
- Watch 0
-  Star 0
-  Fork 0 LennartZi/Lego-Ev-3
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathLego-Ev-3/Lego/EV-3/src/ev3/Main.java
-285521b  4 hours ago
-@LennartZi LennartZi fixes and pll
-1 contributor
-RawBlameHistory     
-476 lines (427 sloc)  15.9 KB
 package ev3;
 
 import lejos.hardware.ev3.LocalEV3;
@@ -466,7 +446,7 @@ public class Main
     // P=Prime, also gegen den Uhrzeigersinn
     
      
-    private static String[] wK(String cubeArray[],String tauschArray[]) // wK = weißes Kreuz
+    private static String[] wC(String cubeArray[],String tauschArray[]) // wC = white Cross
 	{
 		{																		// Klammer für die Übersicht
 			if(cubeArray[12] == cubeArray[7] && cubeArray[7] == cubeArray[12])
