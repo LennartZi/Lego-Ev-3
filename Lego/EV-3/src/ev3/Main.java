@@ -1,3 +1,23 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @ShinanSenpai
+Configure email settings 
+Please verify your email address to access all of GitHub's features.
+An email containing verification instructions was sent to fenderfabian@web.de.
+ Watch 0
+  Star 0
+  Fork 0 LennartZi/Lego-Ev-3
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathLego-Ev-3/Lego/EV-3/src/ev3/Main.java
+285521b  4 hours ago
+@LennartZi LennartZi fixes and pll
+1 contributor
+RawBlameHistory     
+476 lines (427 sloc)  15.9 KB
 package ev3;
 
 import lejos.hardware.ev3.LocalEV3;
@@ -222,142 +242,779 @@ public class Main
 	
     private static void f(String cubeArray[],String tauschArray[]) 
     {
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
     }
     
     private static void fPrime(String cubeArray[],String tauschArray[]) 
     {
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void f2(String cubeArray[],String tauschArray[])
+    {
+    	drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
     }
       
     private static void b(String cubeArray[],String tauschArray[]) 
     {
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
     }
     
     private static void bPrime(String cubeArray[],String tauschArray[])
     {
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void b2(String cubeArray[],String tauschArray[])
+    {
+    	drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
     }
         
     private static void l(String cubeArray[],String tauschArray[]) 
     {
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehen(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    drehenGanz(cubeArray, tauschArray);
+	    kippen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
     }
     
     private static void lPrime(String cubeArray[],String tauschArray[])
     {
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    }
+    
+    private static void l2(String cubeArray[],String tauschArray[])
+    {
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
     }
        
     private static void r(String cubeArray[],String tauschArray[])
     {
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
     }
     
     private static void rPrime(String cubeArray[],String tauschArray[])
     {
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    drehenGanz(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    }
+    
+    private static void r2(String cubeArray[],String tauschArray[])
+    {
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
     }
        
     private static void u(String cubeArray[],String tauschArray[])
     {
-    kippen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);        
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);        
     }
     
     private static void uPrime(String cubeArray[],String tauschArray[])
     {
-    kippen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);
-    kippen(cubeArray, tauschArray);        
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);        
+    }
+    
+    private static void u2(String cubeArray[],String tauschArray[])
+    {
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);
+    	kippen(cubeArray, tauschArray);        
     }
 	
     private static void d(String cubeArray[],String tauschArray[])
     {
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
-    drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
     }
     
     private static void dPrime(String cubeArray[], String tauschArray[])
     {
-    drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    }
+    
+    private static void d2(String cubeArray[],String tauschArray[])
+    {
+    	drehen(cubeArray, tauschArray);
+    	drehen(cubeArray, tauschArray);
+    }
+    
+    private static void m(String cubeArray[],String tauschArray[])
+    {
+    	r(cubeArray, tauschArray);
+    	lPrime(cubeArray, tauschArray);
+    }
+    
+    private static void mPrime(String cubeArray[],String tauschArray[])
+    {
+    	rPrime(cubeArray, tauschArray);
+    	l(cubeArray, tauschArray);
+    }
+    
+    private static void m2(String cubeArray[],String tauschArray[])
+    {
+    	r2(cubeArray, tauschArray);
+    	l2(cubeArray, tauschArray);
     }
     
     // F=Front, B=Back, L=Left, R=Right, U= Up, D=Down 
     // P=Prime, also gegen den Uhrzeigersinn
+    
+     
+    private static String[] wK(String cubeArray[],String tauschArray[]) // wK = weißes Kreuz
+	{
+		{																		// Klammer für die Übersicht
+			if(cubeArray[12] == cubeArray[7] && cubeArray[7] == cubeArray[12])
+			{
+				l(cubeArray, tauschArray);
+				f(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);			
+			}
+		
+			if(cubeArray[12] == cubeArray[4] && cubeArray[7] == cubeArray[15])
+			{
+				b(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+		
+			if(cubeArray[12] == cubeArray[15] && cubeArray[7] == cubeArray[4])
+			{
+				uPrime(cubeArray, tauschArray);
+			}
+		
+			if(cubeArray[12] == cubeArray[5] && cubeArray[7] == cubeArray[14])
+			{
+				rPrime(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+		
+			if(cubeArray[12] == cubeArray[14] && cubeArray[7] == cubeArray[5])
+			{
+				u2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[6] && cubeArray[7] == cubeArray[13])
+			{
+				fPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[13] && cubeArray[7] == cubeArray[6])
+			{
+				u(cubeArray, tauschArray);
+			}
+		
+			
+			
+			if(cubeArray[12] == cubeArray[21] && cubeArray[7] == cubeArray[24])
+			{
+				f(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[24] && cubeArray[7] == cubeArray[21])
+			{
+				lPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[27] && cubeArray[7] == cubeArray[20])
+			{
+				bPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if (cubeArray[12] == cubeArray[20] && cubeArray[7] == cubeArray[27])
+			{
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[23] && cubeArray[7] == cubeArray[26])
+			{
+				b(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[26] && cubeArray[7] == cubeArray[23])
+			{
+				rPrime(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[25] && cubeArray[7] == cubeArray[22])
+			{
+				fPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[22] && cubeArray[7] == cubeArray[25])
+			{
+				r(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+			}
+			
+			
+			
+			if(cubeArray[12] == cubeArray[47] && cubeArray[7] == cubeArray[32])
+			{
+				dPrime(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[32] && cubeArray[7] == cubeArray[47])
+			{
+				l2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[46] && cubeArray[7] == cubeArray[35])
+			{
+				bPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[35] && cubeArray[7] == cubeArray[46])
+			{
+				d(cubeArray, tauschArray);
+				l2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[45] && cubeArray[7] == cubeArray[34])
+			{
+				dPrime(cubeArray, tauschArray);
+				f(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[34] && cubeArray[7] == cubeArray[34])
+			{
+				d2(cubeArray, tauschArray);
+				l2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[44] && cubeArray[7] == cubeArray[33])
+			{
+				f(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[12] == cubeArray[33] && cubeArray[7] == cubeArray[44])
+			{
+				dPrime(cubeArray, tauschArray);
+				l2(cubeArray, tauschArray);
+			}
+		}
+		
+		
+		
+		{
+			if(cubeArray[15] == cubeArray[4] && cubeArray[4] == cubeArray[15])
+			{
+				bPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[5] && cubeArray[4] == cubeArray[14])
+			{
+				r(cubeArray, tauschArray);
+				b(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[14] && cubeArray[4] == cubeArray [5])
+			{
+				r2(cubeArray, tauschArray);
+				d(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[6] && cubeArray[4] == cubeArray[13])
+			{
+				f(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				d(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[13] && cubeArray[4] == cubeArray[6])
+			{
+				f2(cubeArray, tauschArray);
+				d2(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);				
+			}
+			
+			
+			
+			if(cubeArray[15] == cubeArray[21] && cubeArray[4] == cubeArray[24])
+			{
+				fPrime(cubeArray, tauschArray);
+				d2(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[24] && cubeArray[4] == cubeArray[21])
+			{
+				lPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[27] && cubeArray[4] == cubeArray[20])
+			{
+				bPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[20] && cubeArray[4] == cubeArray[20])
+			{
+				uPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[23] && cubeArray[4] == cubeArray[26])
+			{
+				b(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[26] && cubeArray[4] == cubeArray[23])
+			{
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[22] && cubeArray[4] == cubeArray[25])
+			{
+				u(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[25] && cubeArray[4] == cubeArray[22])
+			{
+				f(cubeArray, tauschArray);
+				d2(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			
+			
+			if(cubeArray[15] == cubeArray[32] && cubeArray[4] == cubeArray[47])
+			{
+				dPrime(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[47] && cubeArray[4] == cubeArray[32])
+			{
+				l(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[35] && cubeArray[4] == cubeArray[46])
+			{
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[46] && cubeArray[4] == cubeArray[35])
+			{
+				b(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[34] && cubeArray[4] == cubeArray[45])
+			{
+				d(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[45] && cubeArray[4] == cubeArray[34])
+			{
+				rPrime(cubeArray, tauschArray);
+				b(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[33] && cubeArray[4] == cubeArray[44])
+			{
+				d2(cubeArray, tauschArray);
+				b2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[15] == cubeArray[44] && cubeArray[4] == cubeArray[33])
+			{
+				d(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				b(cubeArray, tauschArray);
+			}
+		}
+		
+		
+		
+		{
+			if(cubeArray[14] == cubeArray[5] && cubeArray[5] == cubeArray[14])
+			{
+				rPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[6] && cubeArray[5] == cubeArray[13])
+			{
+				f(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[13] && cubeArray[5] == cubeArray[6])
+			{
+				f2(cubeArray, tauschArray);
+				d(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+		
+			
+			
+			if(cubeArray[14] == cubeArray[21] && cubeArray[5] == cubeArray[24])
+			{
+				fPrime(cubeArray, tauschArray);
+				d(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[24] && cubeArray[5] == cubeArray[21])
+			{
+				l(cubeArray, tauschArray);
+				d2(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[27] && cubeArray[5] == cubeArray[20])
+			{
+				b(cubeArray, tauschArray);
+				dPrime(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if (cubeArray[14] == cubeArray[20] && cubeArray[5] == cubeArray[27])
+			{
+				lPrime(cubeArray, tauschArray);
+				d2(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[23] && cubeArray[5] == cubeArray[26])
+			{
+				uPrime(cubeArray, tauschArray);
+				b(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[26] && cubeArray[5] == cubeArray[23])
+			{
+				rPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[25] && cubeArray[5] == cubeArray[22])
+			{
+				u(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[22] && cubeArray[5] == cubeArray[25])
+			{
+				r(cubeArray, tauschArray);
+			}
+			
+			
+			
+			if(cubeArray[14] == cubeArray[47] && cubeArray[5] == cubeArray[32])
+			{
+				d(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[32] && cubeArray[5] == cubeArray[47])
+			{
+				d2(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[46] && cubeArray[5] == cubeArray[35])
+			{
+				b(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[35] && cubeArray[5] == cubeArray[46])
+			{
+				dPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[45] && cubeArray[5] == cubeArray[34])
+			{
+				dPrime(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[34] && cubeArray[5] == cubeArray[34])
+			{
+				r2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[44] && cubeArray[5] == cubeArray[33])
+			{
+				fPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[14] == cubeArray[33] && cubeArray[5] == cubeArray[44])
+			{
+				d(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+			}
+			
+		}
+		
+		
+		
+		{
+			if(cubeArray[13] == cubeArray[6] && cubeArray[6] == cubeArray[13])
+			{
+				fPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+		
+			
+			
+			if(cubeArray[13] == cubeArray[21] && cubeArray[6] == cubeArray[24])
+			{
+				f(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[24] && cubeArray[6] == cubeArray[21])
+			{
+				u(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[27] && cubeArray[6] == cubeArray[20])
+			{
+				u2(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+			}
+			
+			if (cubeArray[13] == cubeArray[20] && cubeArray[6] == cubeArray[27])
+			{
+				u(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[23] && cubeArray[6] == cubeArray[26])
+			{
+				uPrime(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[26] && cubeArray[6] == cubeArray[23])
+			{
+				u2(cubeArray, tauschArray);
+				b(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[25] && cubeArray[6] == cubeArray[22])
+			{
+				fPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[22] && cubeArray[6] == cubeArray[25])
+			{
+				uPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+			}
+			
+			
+			
+			if(cubeArray[13] == cubeArray[47] && cubeArray[6] == cubeArray[32])
+			{
+				lPrime(cubeArray, tauschArray);
+				f(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[32] && cubeArray[6] == cubeArray[47])
+			{
+				d(cubeArray, tauschArray);
+				f2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[46] && cubeArray[6] == cubeArray[35])
+			{
+				d(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				f(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[35] && cubeArray[6] == cubeArray[46])
+			{
+				d2(cubeArray, tauschArray);
+				f2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[45] && cubeArray[6] == cubeArray[34])
+			{
+				r(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[34] && cubeArray[6] == cubeArray[34])
+			{
+				dPrime(cubeArray, tauschArray);
+				f2(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[44] && cubeArray[6] == cubeArray[33])
+			{
+				d(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+			}
+			
+			if(cubeArray[13] == cubeArray[33] && cubeArray[6] == cubeArray[44])
+			{
+				f2(cubeArray, tauschArray);
+			}
+		}
+		
+		return cubeArray;
+	}
 
 
 
@@ -474,3 +1131,5 @@ public class Main
 		
 	}
 }
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
