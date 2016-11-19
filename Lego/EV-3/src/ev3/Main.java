@@ -220,7 +220,7 @@ public class Main
 	
 	//Fabian
 	
-    private static void F(String cubeArray[],String tauschArray[]) 
+    private static void f(String cubeArray[],String tauschArray[]) 
     {
     drehenGanz(cubeArray, tauschArray);
     kippen(cubeArray, tauschArray);
@@ -233,7 +233,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
     
-    private static void FP(String cubeArray[],String tauschArray[]) 
+    private static void fPrime(String cubeArray[],String tauschArray[]) 
     {
     drehenGanz(cubeArray, tauschArray);
     kippen(cubeArray, tauschArray);
@@ -244,7 +244,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
       
-    private static void B(String cubeArray[],String tauschArray[]) 
+    private static void b(String cubeArray[],String tauschArray[]) 
     {
     drehenGanz(cubeArray, tauschArray);
     drehenGanz(cubeArray, tauschArray);
@@ -261,7 +261,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
     
-    private static void BP(String cubeArray[],String tauschArray[])
+    private static void bPrime(String cubeArray[],String tauschArray[])
     {
     drehenGanz(cubeArray, tauschArray);
     drehenGanz(cubeArray, tauschArray);
@@ -276,7 +276,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
         
-    private static void L(String cubeArray[],String tauschArray[]) 
+    private static void l(String cubeArray[],String tauschArray[]) 
     {
     kippen(cubeArray, tauschArray);
     drehen(cubeArray, tauschArray);
@@ -289,7 +289,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
     
-    private static void LP(String cubeArray[],String tauschArray[])
+    private static void lPrime(String cubeArray[],String tauschArray[])
     {
     kippen(cubeArray, tauschArray);
     drehen(cubeArray, tauschArray);
@@ -300,7 +300,7 @@ public class Main
     drehenGanz(cubeArray, tauschArray);
     }
        
-    private static void R(String cubeArray[],String tauschArray[])
+    private static void r(String cubeArray[],String tauschArray[])
     {
     drehenGanz(cubeArray, tauschArray);
     drehenGanz(cubeArray, tauschArray);
@@ -313,7 +313,7 @@ public class Main
     kippen(cubeArray, tauschArray);
     }
     
-    private static void RP(String cubeArray[],String tauschArray[])
+    private static void rPrime(String cubeArray[],String tauschArray[])
     {
     drehenGanz(cubeArray, tauschArray);
     drehenGanz(cubeArray, tauschArray);
@@ -324,7 +324,7 @@ public class Main
     kippen(cubeArray, tauschArray);
     }
        
-    private static void U(String cubeArray[],String tauschArray[])
+    private static void u(String cubeArray[],String tauschArray[])
     {
     kippen(cubeArray, tauschArray);
     kippen(cubeArray, tauschArray);
@@ -335,7 +335,7 @@ public class Main
     kippen(cubeArray, tauschArray);        
     }
     
-    private static void UP(String cubeArray[],String tauschArray[])
+    private static void uPrime(String cubeArray[],String tauschArray[])
     {
     kippen(cubeArray, tauschArray);
     kippen(cubeArray, tauschArray);
@@ -344,14 +344,14 @@ public class Main
     kippen(cubeArray, tauschArray);        
     }
 	
-    private static void D(String cubeArray[],String tauschArray[])
+    private static void d(String cubeArray[],String tauschArray[])
     {
     drehen(cubeArray, tauschArray);
     drehen(cubeArray, tauschArray);
     drehen(cubeArray, tauschArray);
     }
     
-    private static void DP(String cubeArray[], String tauschArray[])
+    private static void dPrime(String cubeArray[], String tauschArray[])
     {
     drehen(cubeArray, tauschArray);
     }
@@ -361,9 +361,11 @@ public class Main
 
 
 
-
 	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
-	{
+	{	
+		int x = 0;
+		pll:
+		while(x > 3){
 		int i = 0;
 		while(i > 3){
 						
@@ -372,18 +374,6 @@ public class Main
 			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
 			&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
 			&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
-			if(i == 1){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 2){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 3){
-				drehenGanz(cubeArray, tauschArray);
-			}
 			//Lw' U R' D2 R U' R' D2 R2
 		}
 		
@@ -392,18 +382,6 @@ public class Main
 				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
 				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
 				&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
-			if(i == 1){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 2){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 3){
-				drehenGanz(cubeArray, tauschArray);
-			}
 			//Rw U' L D2 L' U L D2 L2
 		}
 		
@@ -412,31 +390,85 @@ public class Main
 				&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
 				&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
 				&& cubeArray[16] == cubeArray[51] && cubeArray[10] == cubeArray[51]){
-			if(i == 1){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 2){
-				drehenGanz(cubeArray, tauschArray);
-				drehenGanz(cubeArray, tauschArray);
-			}
-			else if(i == 3){
-				drehenGanz(cubeArray, tauschArray);
-			}
 			//(r' R' U') (L D' L' U L) (R U' R' D R) U
 		}
 		
+
 		//PLL 04
+		if(cubeArray[15] == cubeArray[48] 
+				&& cubeArray[14] == cubeArray[49]
+				&& cubeArray[13] == cubeArray[50]
+				&& cubeArray[12] == cubeArray[51]){
+				//M2 U M2 U M' U2 M2 U2 M' U2
+			}
 		
 		//PLL 05
+		if(cubeArray[14] == cubeArray[48] 
+				&& cubeArray[15] == cubeArray[49]
+				&& cubeArray[12] == cubeArray[50]
+				&& cubeArray[13] == cubeArray[51]){
+				//M2 U M2 U2 M2 U M2
+			}
 		
 		//PLL 06
+		if(cubeArray[14] == cubeArray[48] 
+				&& cubeArray[12] == cubeArray[49]
+				&& cubeArray[13] == cubeArray[50]
+				&& cubeArray[15] == cubeArray[51]){
+				//R U' R U R U R U' R' U' R2
+			}
 		
 		//PLL 07
+		if(cubeArray[13] == cubeArray[48] 
+			&& cubeArray[14] == cubeArray[49]
+			&& cubeArray[12] == cubeArray[50]
+			&& cubeArray[15] == cubeArray[51]){
+			//R2 U R U R' U' R' U' R' U R'
+		}
+		
+		//ende
+		if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[48]
+				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[49]
+				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[50]
+				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[51]){
+			
+			LCD.drawString("fertig", 2, 2);
+			break pll;
+		}
+		
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[49]
+				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[50]
+				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[51]
+				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[48]){
+			u(cubeArray,tauschArray);
+			LCD.drawString("fertig", 2, 2);
+			break pll;
+		}
+		
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[50]
+				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[51]
+				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[48]
+				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[49]){
+			u(cubeArray,tauschArray);
+			u(cubeArray,tauschArray);
+			LCD.drawString("fertig", 2, 2);
+			break pll;
+		}
+		
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[51]
+				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[48]
+				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[49]
+				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[50]){
+			uPrime(cubeArray,tauschArray);
+			LCD.drawString("fertig", 2, 2);
+			break pll;
+		}
 		
 		drehenGanz(cubeArray, tauschArray);
 		i++;
+		}
+		u(cubeArray,tauschArray);
+		x++;
 		}
 		return cubeArray;
 		
