@@ -17,8 +17,8 @@ public class Main
 	
 	public static void main(String[] args)
 	{
-		String[] cubeArray = new String[54];	// 54 oberfl�chen mit Farben
-		String[] tauschArray = new String[54];	// Array zum tempor�ren speichern beim drehen
+		String[] cubeArray = new String[54];	// 54 oberflaechen mit Farben
+		String[] tauschArray = new String[54];	// Array zum temporaeren speichern beim drehen
 		
 		cubeArray [48] = "green";	//die mitten werden festgelegt
 		cubeArray [49] = "red";
@@ -27,17 +27,44 @@ public class Main
 		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";
 		
+		/*	for(int i = 8; i < 40;){
+		cubeArray [i] = "green";
+		i++;
+		cubeArray [i] = "red";
+		i++;
+		cubeArray [i] = "blue";
+		i++;
+		cubeArray [i] = "orange";
+		i++;
+		
+	}
+	
+		cubeArray [0] = "white";
+		cubeArray [1] = "white";
+		cubeArray [2] = "white";
+		cubeArray [3] = "white";
+		cubeArray [4] = "white";
+		cubeArray [5] = "white";
+		cubeArray [6] = "white";
+		cubeArray [7] = "white";
+		
+		cubeArray [40] = "yellow";
+		cubeArray [44] = "yellow";
+		cubeArray [41] = "yellow";
+		cubeArray [45] = "yellow";
+		cubeArray [42] = "yellow";
+		cubeArray [46] = "yellow";
+		cubeArray [43] = "yellow";
+		cubeArray [47] = "yellow";*/
+		
 		scan(cubeArray);	//unfertig
-		drehen(cubeArray, tauschArray);
-		drehenGanz(cubeArray, tauschArray);
-		kippen(cubeArray, tauschArray);	//(welche bewegung zum drehen??)
+		wC(cubeArray, tauschArray);
 		pll(cubeArray, tauschArray);
 	}
 	
-	private static String[] scan(String cubeArray[])	//Unfertig
+	private static void scan(String cubeArray[])	//Unfertig
 	{
 		colours();
-		return cubeArray;
 	}
 	
 	private static String colours()	//ordnet die richtige farbe zu
@@ -93,17 +120,17 @@ public class Main
 		}
 	}
 	
-	private static String[] drehen(String cubeArray[], String tauschArray[])	//dreht unten|zum benutzen: "drehen(cubeArray, tauschArray);"
+	private static void drehen(String cubeArray[], String tauschArray[])	//dreht unten|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 28; i < 48; i++)	//nur ben�tigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
+		for (int i = 28; i < 48; i++)	//nur benoetigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
 			j++;
-			if(j % 4 == 0)	//jeder vierte stein �bergibt seine attribute an den stein 3 vor ihm
+			if(j % 4 == 0)	//jeder vierte stein uebergibt seine attribute an den stein 3 vor ihm
 			{
 				cubeArray [i] = tauschArray [i-3];
 			}
@@ -116,20 +143,19 @@ public class Main
 		g.rotate(45);
 		p.rotate(90);	//das physische drehen
 		g.rotate(-45);
-	return cubeArray;	//r�ckgabe des nun gedrehten Arrays
 	}
 	
-	private static String[] drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
+	private static void drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
 	{
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
-		for (int i = 0; i < 52; i++)	//nur ben�tigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
+		for (int i = 0; i < 52; i++)	//nur benoetigte steine werden getauscht i = der aktuelle stein, die 47 der letzte zu tauschende stein
 		{
 			j++;
-			if(j % 4 == 0)	//jeder vierte stein �bergibt seine attribute an den stein 3 vor ihm
+			if(j % 4 == 0)	//jeder vierte stein Uebergibt seine attribute an den stein 3 vor ihm
 			{
 				cubeArray [i] = tauschArray [i-3];
 			}
@@ -140,10 +166,9 @@ public class Main
 		}
 		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
 		p.rotate(90);	//das physische drehen
-	return cubeArray;	//r�ckgabe des nun gedrehten Arrays
 	}
 	
-	private static String[] kippen(String cubeArray[], String tauschArray[])	//kippt (welche bewegung zum drehen??)|zum benutzen: "kippen(cubeArray, tauschArray);"
+	private static void kippen(String cubeArray[], String tauschArray[])	//kippt (welche bewegung zum drehen??)|zum benutzen: "kippen(cubeArray, tauschArray);"
 	{
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
@@ -214,8 +239,6 @@ public class Main
 		
 		g.rotate(-300);
 		g.rotate(300);
-		
-		return cubeArray;
 	}
 	
 	//Fabian
@@ -997,7 +1020,7 @@ public class Main
 	}
 
 
-	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
+	private static void pll(String cubeArray[],String tauschArray[])	//2-Look PLL
 	{	
 		int x = 0;
 		pll:
@@ -1185,7 +1208,6 @@ public class Main
 		u(cubeArray,tauschArray);
 		x++;
 		}
-		return cubeArray;
 		
 	}
 }
