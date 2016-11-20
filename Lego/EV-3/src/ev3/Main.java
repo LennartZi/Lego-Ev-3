@@ -442,13 +442,13 @@ public class Main
     	l2(cubeArray, tauschArray);
     }
     
-    // F=Front, B=Back, L=Left, R=Right, U= Up, D=Down 
-    // P=Prime, also gegen den Uhrzeigersinn
+    // f=Front, b=Back, l=Left, r=Right, u=Up, d=Down 
+    // Prime, gegen den Uhrzeigersinn
     
      
     private static String[] wC(String cubeArray[],String tauschArray[]) // wC = white Cross
 	{
-		{																		// Klammer für die Übersicht
+		{																		// Klammer fuer die Uebersicht
 			if(cubeArray[12] == cubeArray[7] && cubeArray[7] == cubeArray[12])
 			{
 				l(cubeArray, tauschArray);
@@ -1008,10 +1008,23 @@ public class Main
 						
 		//PLL 01
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
-			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
-			&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
-			&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
-			//Lw' U R' D2 R U' R' D2 R2
+				&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+				&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+				&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
+				//R' U2 R2 U' L' U R' U' L U R' U2 R
+			rPrime(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			r2(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			lPrime(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			l(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
 		}
 		
 		//PLL 02
@@ -1019,7 +1032,20 @@ public class Main
 				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
 				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
 				&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
-			//Rw U' L D2 L' U L D2 L2
+				//R' U2 R U' L' U R U' L U R2 U2 R
+			rPrime(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			lPrime(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			l(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			r2(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
 		}
 		
 		//PLL 03
@@ -1037,6 +1063,16 @@ public class Main
 				&& cubeArray[13] == cubeArray[50]
 				&& cubeArray[12] == cubeArray[51]){
 				//M2 U M2 U M' U2 M2 U2 M' U2
+			m2(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			m2(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			mPrime(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			m2(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			mPrime(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
 			}
 		
 		//PLL 05
@@ -1045,6 +1081,13 @@ public class Main
 				&& cubeArray[12] == cubeArray[50]
 				&& cubeArray[13] == cubeArray[51]){
 				//M2 U M2 U2 M2 U M2
+			m2(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			m2(cubeArray, tauschArray);
+			u2(cubeArray, tauschArray);
+			m2(cubeArray, tauschArray);
+			u(cubeArray, cubeArray);
+			m2(cubeArray, tauschArray);
 			}
 		
 		//PLL 06
@@ -1053,6 +1096,17 @@ public class Main
 				&& cubeArray[13] == cubeArray[50]
 				&& cubeArray[15] == cubeArray[51]){
 				//R U' R U R U R U' R' U' R2
+			r(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			r2(cubeArray, tauschArray);
 			}
 		
 		//PLL 07
@@ -1061,6 +1115,17 @@ public class Main
 			&& cubeArray[12] == cubeArray[50]
 			&& cubeArray[15] == cubeArray[51]){
 			//R2 U R U R' U' R' U' R' U R'
+		r2(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);			
 		}
 		
 		//ende
@@ -1111,5 +1176,3 @@ public class Main
 		
 	}
 }
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
