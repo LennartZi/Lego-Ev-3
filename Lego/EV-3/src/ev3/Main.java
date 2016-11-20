@@ -997,7 +997,6 @@ public class Main
 	}
 
 
-
 	private static String[] pll(String cubeArray[],String tauschArray[])	//2-Look PLL
 	{	
 		int x = 0;
@@ -1053,7 +1052,21 @@ public class Main
 				&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
 				&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
 				&& cubeArray[16] == cubeArray[51] && cubeArray[10] == cubeArray[51]){
-			//(r' R' U') (L D' L' U L) (R U' R' D R) U
+				//(r' R' U') (L D' L' U L) (R U' R' D R) U
+			lPrime(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			l(cubeArray, tauschArray);
+			dPrime(cubeArray, tauschArray);
+			lPrime(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			l(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			d(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
 		}
 		
 
