@@ -59,6 +59,7 @@ public class Main
 		
 		scan(cubeArray);	//unfertig
 		wC(cubeArray, tauschArray);
+		oll(cubeArray, tauschArray);
 		pll(cubeArray, tauschArray);
 	}
 	
@@ -1019,14 +1020,107 @@ public class Main
 		return cubeArray;
 	}
 
+    
+	private static void oll(String cubeArray[],String tauschArray[]){
+		while(cubeArray[0] != "yellow" && cubeArray[1] != "yellow" && cubeArray[2] != "yellow" && cubeArray[3] != "yellow" && 
+				cubeArray[4] != "yellow" && cubeArray[5] != "yellow" && cubeArray[6] != "yellow" && cubeArray[7] != "yellow"){
+			int x = 0;
+			while(x > 4){
+			int i = 0;
+			while(i < 4){
+				//OLL 04
+				if(cubeArray[0] == "yellow" && cubeArray[1] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
+					&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[17] == "yellow"){
+					//(R'2 D) (R' U2) (R D') (R' U2 R')
+					
+				}
+				
+				//OLL 05
+				if(cubeArray[1] == "yellow" && cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
+						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[19] == "yellow"){
+					//(Rw U R' U') (L' U R U')
+					
+				}
+				
+				//OLL 06
+				if(cubeArray[1] == "yellow" && cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
+						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[8] == "yellow"){
+					//F' (Rw U R' U') (L' U R)
+					
+				}
+				
+				//OLL 07
+				if(cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
+					&& cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[18] == "yellow" && cubeArray[19] == "yellow"){
+					//(R U R' U) (R U'2 R')
+					
+				}
+				
+				//OLL 08
+				if(cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
+					&& cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[11] == "yellow" && cubeArray[8] == "yellow"){
+					//(L' U' L U') (L' U2 L)
+					
+				}
+				
+				//OLL 09
+				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
+					&& cubeArray[8] == "yellow" && cubeArray[12] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow"){
+					//(R U'2) (R'2 U') (R2 U') (R'2 U'2 R)
+					
+				}
+				
+				//OLL 010
+				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
+					&& cubeArray[9] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow" && cubeArray[19] == "yellow"){
+					//F (R U R' U') (R U R' U') (R U R' U') F'
+					
+				}
+				drehenGanz(cubeArray, tauschArray);
+				i++;
+				}
+			u(cubeArray,tauschArray);
+			x++;
+			}
+		}
+		
+		//OLL 2Look 1
+		if(cubeArray[12] == "yellow" && cubeArray[13] == "yellow" && cubeArray[14] == "yellow" && cubeArray[15] == "yellow"){
+			//F R U R' U' F' Fw R U R' U' Fw'
+			
+		}				
+		
+		//OLL 2Look 2.1
+		if(cubeArray[7] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[13] == "yellow"){
+			//F R U R' U' F'
+			
+		}
+		
+		//OLL 2Look 2.2
+		if(cubeArray[4] == "yellow" && cubeArray[6] == "yellow" && cubeArray[12] == "yellow" && cubeArray[14] == "yellow"){
+			drehenGanz(cubeArray, tauschArray);
+			//F R U R' U' F'
+			
+		}
+		
+		//OLL 2Look 3
+		int x = 0;
+		while(x < 4){
+			if(cubeArray[6] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[12] == "yellow"){
+				//Fw R U R' U' Fw'
+				break;
+			}
+			x++;
+		}
+	}
 
 	private static void pll(String cubeArray[],String tauschArray[])	//2-Look PLL
 	{	
 		int x = 0;
 		pll:
-		while(x > 3){
+		while(x > 4){
 		int i = 0;
-		while(i > 3){
+		while(i > 4){
 						
 		//PLL 01
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
@@ -1208,6 +1302,6 @@ public class Main
 		u(cubeArray,tauschArray);
 		x++;
 		}
-		
 	}
+	
 }
