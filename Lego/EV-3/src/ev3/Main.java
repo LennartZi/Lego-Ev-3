@@ -58,7 +58,7 @@ public class Main
 		cubeArray [47] = "yellow";*/
 		
 		scan(cubeArray);	//unfertig
-		wC(cubeArray, tauschArray);
+		wE(cubeArray, tauschArray);
 		oll(cubeArray, tauschArray);
 		pll(cubeArray, tauschArray);
 	}
@@ -470,7 +470,7 @@ public class Main
     // Prime, gegen den Uhrzeigersinn
     
      
-    private static String[] wC(String cubeArray[],String tauschArray[]) // wC = white Cross
+    private static String[] wE(String cubeArray[],String tauschArray[]) // wE= white Edges
 	{
 		{																		// Klammer fuer die Uebersicht
 			if(cubeArray[12] == cubeArray[7] && cubeArray[7] == cubeArray[12])
@@ -1019,7 +1019,420 @@ public class Main
 		
 		return cubeArray;
 	}
+    
+    private static String[] wC(String cubeArray[],String tauschArray[]) // white Corners
 
+    {
+    	wRG(cubeArray, tauschArray);
+    	wGO(cubeArray, tauschArray);
+    	wOB(cubeArray, tauschArray);
+    	wBR(cubeArray, tauschArray);
+    }
+    
+    public static void wRG(String cubeArray[],String tauschArray[])
+    {
+    	if(cubeArray[16] == cubeArray[9] && cubeArray[9] == cubeArray[3] && cubeArray[3] == cubeArray[16] ||
+    			cubeArray[16] == cubeArray[3] && cubeArray[9] == cubeArray[16] && cubeArray[3] == cubeArray[9])
+    	{
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;
+    	}
+    	
+    	if(cubeArray[16] == cubeArray[0] && cubeArray[9] == cubeArray[19] && cubeArray[3] == cubeArray[8] ||
+    			cubeArray[16] == cubeArray[19] && cubeArray[9] == cubeArray[8] && cubeArray[3] == cubeArray[0] ||
+    			cubeArray[16] == cubeArray[8] && cubeArray[9] == cubeArray[0] && cubeArray[3] == cubeArray[19])
+    	{
+    		b(cubeArray, tauschArray);
+    		d(cubeArray, tauschArray);
+    		bPrime(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[16] == cubeArray[18] && cubeArray[9] == cubeArray[11] && cubeArray[3] == cubeArray[1] ||
+    			cubeArray[16] == cubeArray[1] && cubeArray[9] == cubeArray[18] && cubeArray[3] == cubeArray[11] ||
+    			cubeArray[16] == cubeArray[11] && cubeArray[9] == cubeArray[1] && cubeArray[3] == cubeArray[18])
+    	{
+    		bPrime(cubeArray, tauschArray);
+    		d2(cubeArray, tauschArray);
+    	    b(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[16] == cubeArray[17] && cubeArray[9] == cubeArray[10] && cubeArray[3] == cubeArray[2] ||
+    			cubeArray[16] == cubeArray[2] && cubeArray[9] == cubeArray[17] && cubeArray[3] == cubeArray[10] ||
+    			cubeArray[16] == cubeArray[10] && cubeArray[9] == cubeArray[2] && cubeArray[3] == cubeArray[17])
+    	{
+    		rPrime(cubeArray, tauschArray);
+    		dPrime(cubeArray, tauschArray);
+    		r(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[16] == cubeArray[29] && cubeArray[9] == cubeArray[36] && cubeArray[3] == cubeArray[40] ||
+    			cubeArray[16] == cubeArray[40] && cubeArray[9] == cubeArray[29] && cubeArray[3] == cubeArray[36] ||
+    			cubeArray[16] == cubeArray[36] && cubeArray[9] == cubeArray[40] && cubeArray[3] == cubeArray[29])
+    	{
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[16] == cubeArray[39] && cubeArray[9] == cubeArray[43] && cubeArray[3] == cubeArray[28] ||
+    			cubeArray[16] == cubeArray[28] && cubeArray[9] == cubeArray[39] && cubeArray[3] == cubeArray[43] ||
+    			cubeArray[16] == cubeArray[43] && cubeArray[9] == cubeArray[28] && cubeArray[3] == cubeArray[39])
+    	{
+    		d(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	if(cubeArray[16] == cubeArray[42] && cubeArray[9] == cubeArray[31] && cubeArray[3] == cubeArray[38] ||
+    			cubeArray[16] == cubeArray[38] && cubeArray[9] == cubeArray[42] && cubeArray[3] == cubeArray[31] ||
+    			cubeArray[16] == cubeArray[31] && cubeArray[9] == cubeArray[38] && cubeArray[3] == cubeArray[42])
+    	{
+    		d2(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	if(cubeArray[16] == cubeArray[41] && cubeArray[9] == cubeArray[30] && cubeArray[3] == cubeArray[37] ||
+    			cubeArray[16] == cubeArray[37] && cubeArray[9] == cubeArray[41] && cubeArray[3] == cubeArray[30] ||
+    			cubeArray[16] == cubeArray[30] && cubeArray[9] == cubeArray[37] && cubeArray[3] == cubeArray[41])
+    	{
+    		dPrime(cubeArray, tauschArray);
+    		while(cubeArray[3] != cubeArray[3] && cubeArray[16] != cubeArray[16] && cubeArray[9] != cubeArray[9])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    }
+    
+    public static void wGO(String cubeArray[],String tauschArray[])
+    {
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	drehenGanz(cubeArray, tauschArray);
+    	if(cubeArray[19] == cubeArray[0] && cubeArray[8] == cubeArray[19] && cubeArray[0] == cubeArray[8] ||
+    			cubeArray[19] == cubeArray[8] && cubeArray[8] == cubeArray[0] && cubeArray[0] == cubeArray[19])
+    	{
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[19] == cubeArray[18] && cubeArray[8] == cubeArray[11] && cubeArray[0] == cubeArray[1] ||
+    			cubeArray[19] == cubeArray[1] && cubeArray[8] == cubeArray[18] && cubeArray[0] == cubeArray[11] ||
+    			cubeArray[19] == cubeArray[11] && cubeArray[8] == cubeArray[1] && cubeArray[0] == cubeArray[18])
+    	{
+    		b(cubeArray, tauschArray);
+    		d(cubeArray, tauschArray);
+    	    bPrime(cubeArray, tauschArray);
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[19] == cubeArray[17] && cubeArray[8] == cubeArray[10] && cubeArray[0] == cubeArray[2] ||
+    			cubeArray[19] == cubeArray[2] && cubeArray[8] == cubeArray[17] && cubeArray[0] == cubeArray[10] ||
+    			cubeArray[19] == cubeArray[10] && cubeArray[8] == cubeArray[2] && cubeArray[0] == cubeArray[17])
+    	{
+    		bPrime(cubeArray, tauschArray);
+    		d2(cubeArray, tauschArray);
+    		b(cubeArray, tauschArray);
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[19] == cubeArray[29] && cubeArray[8] == cubeArray[36] && cubeArray[0] == cubeArray[40] ||
+    			cubeArray[19] == cubeArray[40] && cubeArray[8] == cubeArray[29] && cubeArray[0] == cubeArray[36] ||
+    			cubeArray[19] == cubeArray[36] && cubeArray[8] == cubeArray[40] && cubeArray[0] == cubeArray[29])
+    	{
+    		dPrime(cubeArray, tauschArray);
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	
+    	if(cubeArray[19] == cubeArray[39] && cubeArray[8] == cubeArray[43] && cubeArray[0] == cubeArray[28] ||
+    			cubeArray[19] == cubeArray[28] && cubeArray[8] == cubeArray[39] && cubeArray[0] == cubeArray[43] ||
+    			cubeArray[19] == cubeArray[43] && cubeArray[8] == cubeArray[28] && cubeArray[0] == cubeArray[39])
+    	{
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	if(cubeArray[19] == cubeArray[42] && cubeArray[8] == cubeArray[31] && cubeArray[0] == cubeArray[38] ||
+    			cubeArray[19] == cubeArray[38] && cubeArray[8] == cubeArray[42] && cubeArray[0] == cubeArray[31] ||
+    			cubeArray[19] == cubeArray[31] && cubeArray[8] == cubeArray[38] && cubeArray[0] == cubeArray[42])
+    	{
+    		d(cubeArray, tauschArray);
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    	if(cubeArray[19] == cubeArray[41] && cubeArray[8] == cubeArray[30] && cubeArray[0] == cubeArray[37] ||
+    			cubeArray[19] == cubeArray[37] && cubeArray[8] == cubeArray[41] && cubeArray[0] == cubeArray[30] ||
+    			cubeArray[19] == cubeArray[30] && cubeArray[8] == cubeArray[37] && cubeArray[0] == cubeArray[41])
+    	{
+    		d2(cubeArray, tauschArray);
+    		while(cubeArray[0] != cubeArray[0] && cubeArray[19] != cubeArray[19] && cubeArray[8] != cubeArray[8])
+    		{
+    			l(cubeArray, tauschArray);
+    			d(cubeArray, tauschArray);
+    			lPrime(cubeArray, tauschArray);
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;
+    	}
+    }
+    	
+    	public static void wOB(String cubeArray[],String tauschArray[])
+        {
+        	drehenGanz(cubeArray, tauschArray);
+        	drehenGanz(cubeArray, tauschArray);
+        	drehenGanz(cubeArray, tauschArray);       	
+        	if(cubeArray[18] == cubeArray[1] && cubeArray[11] == cubeArray[18] && cubeArray[1] == cubeArray[11] ||
+        			cubeArray[18] == cubeArray[11] && cubeArray[11] == cubeArray[1] && cubeArray[1] == cubeArray[18])
+        	{
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	
+        	if(cubeArray[18] == cubeArray[17] && cubeArray[11] == cubeArray[10] && cubeArray[1] == cubeArray[2] ||
+        			cubeArray[18] == cubeArray[2] && cubeArray[11] == cubeArray[17] && cubeArray[1] == cubeArray[10] ||
+        			cubeArray[18] == cubeArray[10] && cubeArray[11] == cubeArray[2] && cubeArray[1] == cubeArray[17])
+        	{
+        		b(cubeArray, tauschArray);
+        		d(cubeArray, tauschArray);
+        		bPrime(cubeArray, tauschArray);
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	
+        	if(cubeArray[18] == cubeArray[29] && cubeArray[11] == cubeArray[36] && cubeArray[1] == cubeArray[40] ||
+        			cubeArray[18] == cubeArray[40] && cubeArray[11] == cubeArray[29] && cubeArray[1] == cubeArray[36] ||
+        			cubeArray[18] == cubeArray[36] && cubeArray[11] == cubeArray[40] && cubeArray[1] == cubeArray[29])
+        	{
+        		d2(cubeArray, tauschArray);
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	
+        	if(cubeArray[18] == cubeArray[39] && cubeArray[11] == cubeArray[43] && cubeArray[1] == cubeArray[28] ||
+        			cubeArray[18] == cubeArray[28] && cubeArray[11] == cubeArray[39] && cubeArray[1] == cubeArray[43] ||
+        			cubeArray[18] == cubeArray[43] && cubeArray[11] == cubeArray[28] && cubeArray[1] == cubeArray[39])
+        	{
+        		dPrime(cubeArray, tauschArray);
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	if(cubeArray[18] == cubeArray[42] && cubeArray[11] == cubeArray[31] && cubeArray[1] == cubeArray[38] ||
+        			cubeArray[18] == cubeArray[38] && cubeArray[11] == cubeArray[42] && cubeArray[1] == cubeArray[31] ||
+        			cubeArray[18] == cubeArray[31] && cubeArray[11] == cubeArray[38] && cubeArray[1] == cubeArray[42])
+        	{
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	if(cubeArray[18] == cubeArray[41] && cubeArray[11] == cubeArray[30] && cubeArray[1] == cubeArray[37] ||
+        			cubeArray[18] == cubeArray[37] && cubeArray[11] == cubeArray[41] && cubeArray[1] == cubeArray[30] ||
+        			cubeArray[18] == cubeArray[30] && cubeArray[11] == cubeArray[37] && cubeArray[1] == cubeArray[41])
+        	{
+        		d(cubeArray, tauschArray);
+        		while(cubeArray[1] != cubeArray[1] && cubeArray[18] != cubeArray[18] && cubeArray[11] != cubeArray[11])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        }
+    	
+    	public static void wBR(String cubeArray[],String tauschArray[])
+        {
+        	drehenGanz(cubeArray, tauschArray);
+        	drehenGanz(cubeArray, tauschArray);
+        	drehenGanz(cubeArray, tauschArray);       	
+        	if(cubeArray[17] == cubeArray[2] && cubeArray[10] == cubeArray[17] && cubeArray[2] == cubeArray[10] ||
+        			cubeArray[17] == cubeArray[10] && cubeArray[10] == cubeArray[2] && cubeArray[2] == cubeArray[17])
+        	{
+        		while(cubeArray[2] != cubeArray[2] && cubeArray[17] != cubeArray[17] && cubeArray[10] != cubeArray[10])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	
+        	if(cubeArray[17] == cubeArray[29] && cubeArray[10] == cubeArray[36] && cubeArray[2] == cubeArray[40] ||
+        			cubeArray[17] == cubeArray[40] && cubeArray[10] == cubeArray[29] && cubeArray[2] == cubeArray[36] ||
+        			cubeArray[17] == cubeArray[36] && cubeArray[10] == cubeArray[40] && cubeArray[2] == cubeArray[29])
+        	{
+        		d(cubeArray, tauschArray);
+        		while(cubeArray[2] != cubeArray[2] && cubeArray[17] != cubeArray[17] && cubeArray[10] != cubeArray[10])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	
+        	if(cubeArray[17] == cubeArray[39] && cubeArray[10] == cubeArray[43] && cubeArray[2] == cubeArray[28] ||
+        			cubeArray[17] == cubeArray[28] && cubeArray[10] == cubeArray[39] && cubeArray[2] == cubeArray[43] ||
+        			cubeArray[17] == cubeArray[43] && cubeArray[10] == cubeArray[28] && cubeArray[2] == cubeArray[39])
+        	{
+        		d2(cubeArray, tauschArray);
+        		while(cubeArray[2] != cubeArray[2] && cubeArray[17] != cubeArray[17] && cubeArray[10] != cubeArray[10])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	if(cubeArray[17] == cubeArray[42] && cubeArray[10] == cubeArray[31] && cubeArray[2] == cubeArray[38] ||
+        			cubeArray[17] == cubeArray[38] && cubeArray[10] == cubeArray[42] && cubeArray[2] == cubeArray[31] ||
+        			cubeArray[17] == cubeArray[31] && cubeArray[10] == cubeArray[38] && cubeArray[2] == cubeArray[42])
+        	{
+        		dPrime(cubeArray, tauschArray);
+        		while(cubeArray[2] != cubeArray[2] && cubeArray[17] != cubeArray[17] && cubeArray[10] != cubeArray[10])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        	if(cubeArray[17] == cubeArray[41] && cubeArray[10] == cubeArray[30] && cubeArray[2] == cubeArray[37] ||
+        			cubeArray[17] == cubeArray[37] && cubeArray[10] == cubeArray[41] && cubeArray[2] == cubeArray[30] ||
+        			cubeArray[17] == cubeArray[30] && cubeArray[10] == cubeArray[37] && cubeArray[2] == cubeArray[41])
+        	{
+        		while(cubeArray[2] != cubeArray[2] && cubeArray[17] != cubeArray[17] && cubeArray[10] != cubeArray[10])
+        		{
+        			l(cubeArray, tauschArray);
+        			d(cubeArray, tauschArray);
+        			lPrime(cubeArray, tauschArray);
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        }
+        	
+        
     
 	private static void oll(String cubeArray[],String tauschArray[]){
 		while(cubeArray[0] != "yellow" && cubeArray[1] != "yellow" && cubeArray[2] != "yellow" && cubeArray[3] != "yellow" && 
