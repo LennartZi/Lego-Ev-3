@@ -29,7 +29,10 @@ public class Main
 		
 		scan(cubeArray);	//unfertig
 		wE(cubeArray, tauschArray);
+<<<<<<< HEAD
 		wC(cubeArray, tauschArray);
+=======
+>>>>>>> origin/master
 		oll(cubeArray, tauschArray);
 		pll(cubeArray, tauschArray);
 	}
@@ -994,7 +997,11 @@ public class Main
 		return cubeArray;
 	}
     
+<<<<<<< HEAD
     private static void wC(String cubeArray[],String tauschArray[]) // white Corners
+=======
+    private static String[] wC(String cubeArray[],String tauschArray[]) // white Corners
+>>>>>>> origin/master
 
     {
     	wRG(cubeArray, tauschArray);
@@ -1003,7 +1010,11 @@ public class Main
     	wBR(cubeArray, tauschArray);
     }
     
+<<<<<<< HEAD
     private static void wRG(String cubeArray[],String tauschArray[])
+=======
+    public static void wRG(String cubeArray[],String tauschArray[])
+>>>>>>> origin/master
     {
     	if(cubeArray[16] == cubeArray[9] && cubeArray[9] == cubeArray[3] && cubeArray[3] == cubeArray[16] ||
     			cubeArray[16] == cubeArray[3] && cubeArray[9] == cubeArray[16] && cubeArray[3] == cubeArray[9])
@@ -1013,9 +1024,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;   		    		        			
     		}
+=======
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[16] == cubeArray[0] && cubeArray[9] == cubeArray[19] && cubeArray[3] == cubeArray[8] ||
@@ -1030,9 +1047,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}   		
+=======
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[16] == cubeArray[18] && cubeArray[9] == cubeArray[11] && cubeArray[3] == cubeArray[1] ||
@@ -1047,9 +1070,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;      		    		        			
     		}  		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[16] == cubeArray[17] && cubeArray[9] == cubeArray[10] && cubeArray[3] == cubeArray[2] ||
@@ -1064,9 +1093,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;     		    		        			
     		}   		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[16] == cubeArray[29] && cubeArray[9] == cubeArray[36] && cubeArray[3] == cubeArray[40] ||
@@ -1078,9 +1113,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;      		    		        			
     		}  		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[16] == cubeArray[39] && cubeArray[9] == cubeArray[43] && cubeArray[3] == cubeArray[28] ||
@@ -1093,9 +1134,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}    		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	if(cubeArray[16] == cubeArray[42] && cubeArray[9] == cubeArray[31] && cubeArray[3] == cubeArray[38] ||
     			cubeArray[16] == cubeArray[38] && cubeArray[9] == cubeArray[42] && cubeArray[3] == cubeArray[31] ||
@@ -1107,9 +1154,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}    		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	if(cubeArray[16] == cubeArray[41] && cubeArray[9] == cubeArray[30] && cubeArray[3] == cubeArray[37] ||
     			cubeArray[16] == cubeArray[37] && cubeArray[9] == cubeArray[41] && cubeArray[3] == cubeArray[30] ||
@@ -1121,6 +1174,7 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}    		
@@ -1128,6 +1182,15 @@ public class Main
     }
     
     private static void wGO(String cubeArray[],String tauschArray[])
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+    	}
+    }
+    
+    public static void wGO(String cubeArray[],String tauschArray[])
+>>>>>>> origin/master
     {
     	drehenGanz(cubeArray, tauschArray);
     	drehenGanz(cubeArray, tauschArray);
@@ -1140,9 +1203,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;   		    		        			
     		}    		
+=======
+    			dPrime(cubeArray, tauschArray);   		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[19] == cubeArray[18] && cubeArray[8] == cubeArray[11] && cubeArray[0] == cubeArray[1] ||
@@ -1157,9 +1226,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}    		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[19] == cubeArray[17] && cubeArray[8] == cubeArray[10] && cubeArray[0] == cubeArray[2] ||
@@ -1174,9 +1249,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;       		    		        			
     		} 		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[19] == cubeArray[29] && cubeArray[8] == cubeArray[36] && cubeArray[0] == cubeArray[40] ||
@@ -1189,9 +1270,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;     		    		        			
     		}   		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	
     	if(cubeArray[19] == cubeArray[39] && cubeArray[8] == cubeArray[43] && cubeArray[0] == cubeArray[28] ||
@@ -1203,9 +1290,15 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;       		    		        			
     		} 		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	if(cubeArray[19] == cubeArray[42] && cubeArray[8] == cubeArray[31] && cubeArray[0] == cubeArray[38] ||
     			cubeArray[19] == cubeArray[38] && cubeArray[8] == cubeArray[42] && cubeArray[0] == cubeArray[31] ||
@@ -1217,10 +1310,16 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}
     		    		
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;    		
+>>>>>>> origin/master
     	}
     	if(cubeArray[19] == cubeArray[41] && cubeArray[8] == cubeArray[30] && cubeArray[0] == cubeArray[37] ||
     			cubeArray[19] == cubeArray[37] && cubeArray[8] == cubeArray[41] && cubeArray[0] == cubeArray[30] ||
@@ -1232,6 +1331,7 @@ public class Main
     			l(cubeArray, tauschArray);
     			d(cubeArray, tauschArray);
     			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
     			dPrime(cubeArray, tauschArray);
         		break;    		    		        			
     		}
@@ -1239,6 +1339,15 @@ public class Main
     }
     	
     	private static void wOB(String cubeArray[],String tauschArray[])
+=======
+    			dPrime(cubeArray, tauschArray);    		    		        			
+    		}
+    		break;
+    	}
+    }
+    	
+    	public static void wOB(String cubeArray[],String tauschArray[])
+>>>>>>> origin/master
         {
         	drehenGanz(cubeArray, tauschArray);
         	drehenGanz(cubeArray, tauschArray);
@@ -1251,9 +1360,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;     		    		        			
         		}   		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	
         	if(cubeArray[18] == cubeArray[17] && cubeArray[11] == cubeArray[10] && cubeArray[1] == cubeArray[2] ||
@@ -1268,9 +1383,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;    		    		        			
         		}    		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	
         	if(cubeArray[18] == cubeArray[29] && cubeArray[11] == cubeArray[36] && cubeArray[1] == cubeArray[40] ||
@@ -1283,9 +1404,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;    		    		        			
         		}    		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	
         	if(cubeArray[18] == cubeArray[39] && cubeArray[11] == cubeArray[43] && cubeArray[1] == cubeArray[28] ||
@@ -1298,9 +1425,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;    		    		        			
         		}    		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	if(cubeArray[18] == cubeArray[42] && cubeArray[11] == cubeArray[31] && cubeArray[1] == cubeArray[38] ||
         			cubeArray[18] == cubeArray[38] && cubeArray[11] == cubeArray[42] && cubeArray[1] == cubeArray[31] ||
@@ -1311,9 +1444,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;    		    		        			
         		}    		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	if(cubeArray[18] == cubeArray[41] && cubeArray[11] == cubeArray[30] && cubeArray[1] == cubeArray[37] ||
         			cubeArray[18] == cubeArray[37] && cubeArray[11] == cubeArray[41] && cubeArray[1] == cubeArray[30] ||
@@ -1325,6 +1464,7 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;     		    		        			
         		}   		
@@ -1332,6 +1472,15 @@ public class Main
         }
     	
     	private static void wBR(String cubeArray[],String tauschArray[])
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+        	}
+        }
+    	
+    	public static void wBR(String cubeArray[],String tauschArray[])
+>>>>>>> origin/master
         {
         	drehenGanz(cubeArray, tauschArray);
         	drehenGanz(cubeArray, tauschArray);
@@ -1344,9 +1493,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;     		    		        			
         		}   		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	
         	if(cubeArray[17] == cubeArray[29] && cubeArray[10] == cubeArray[36] && cubeArray[2] == cubeArray[40] ||
@@ -1359,9 +1514,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;       		    		        			
         		} 		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	
         	if(cubeArray[17] == cubeArray[39] && cubeArray[10] == cubeArray[43] && cubeArray[2] == cubeArray[28] ||
@@ -1374,9 +1535,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;    		    		        			
         		}    		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	if(cubeArray[17] == cubeArray[42] && cubeArray[10] == cubeArray[31] && cubeArray[2] == cubeArray[38] ||
         			cubeArray[17] == cubeArray[38] && cubeArray[10] == cubeArray[42] && cubeArray[2] == cubeArray[31] ||
@@ -1388,9 +1555,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;     		    		        			
         		}   		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         	if(cubeArray[17] == cubeArray[41] && cubeArray[10] == cubeArray[30] && cubeArray[2] == cubeArray[37] ||
         			cubeArray[17] == cubeArray[37] && cubeArray[10] == cubeArray[41] && cubeArray[2] == cubeArray[30] ||
@@ -1401,9 +1574,15 @@ public class Main
         			l(cubeArray, tauschArray);
         			d(cubeArray, tauschArray);
         			lPrime(cubeArray, tauschArray);
+<<<<<<< HEAD
         			dPrime(cubeArray, tauschArray);
             		break;      		    		        			
         		}  		
+=======
+        			dPrime(cubeArray, tauschArray);    		    		        			
+        		}
+        		break;    		
+>>>>>>> origin/master
         	}
         }
         	
