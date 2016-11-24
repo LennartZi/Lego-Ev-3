@@ -1,5 +1,3 @@
-package ev3;
-
 import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -10,10 +8,11 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.SampleProvider;
 
-public class Main 
+public class test 
 {
-	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A);	//die (p)latform
+	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A);	//die (p)lattform
 	static RegulatedMotor g = new EV3LargeRegulatedMotor(MotorPort.B);	//das (g)reifding
+	static RegulatedMotor s = new EV3LargeRegulatedMotor(MotorPort.C); // das (s)ensording
 	
 	public static void main(String[] args)
 	{
@@ -25,9 +24,9 @@ public class Main
 		cubeArray [50] = "blue";
 		cubeArray [51] = "orange";
 		cubeArray [52] = "white";
-		cubeArray [53] = "yellow";
+		cubeArray [53] = "yellow";		
 		
-		scan(cubeArray);	//unfertig
+		//scan(cubeArray);	//unfertig
 		wE(cubeArray, tauschArray);
 		wC(cubeArray, tauschArray);
 		kippen(cubeArray, tauschArray);
@@ -36,12 +35,217 @@ public class Main
 		pll(cubeArray, tauschArray);
 	}
 	
-	private static void scan(String cubeArray[])	//Unfertig
+	/*private static void scan(String cubeArray[])	//Unfertig
 	{
-		for(int i=0; i < cubeArray.length;){
-			cubeArray[i] = colours();
+		for(int i=0; i < cubeArray.length;)
+		{
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[2] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[5] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[1] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[4] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[0] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[7] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[3] = colours();
+			s.rotate(-90)
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[6] = colours();
+			s.rotate(-90);
+			g.rotate(300);
+			g.rotate(-300);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[37] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[25] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[17] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[13] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[9] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[21] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[29] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[33] = colours();
+			s.rotate(-90);
+			g.rotate(300);
+			g.rotate(-300);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[42] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[45] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[41] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[44] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[40] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[47] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[43] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[46] = colours();
+			s.rotate(-90);
+			g.rotate(300);
+			g.rotate(-300);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[11] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[23] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[31] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[35] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[39] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[27] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[19] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[15] = colours();
+			s.rotate(-90);
+			p.rotate(90);
+			g.rotate(300);
+			g.rotate(-300);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[30] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[34] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[38] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[26] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[18] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[14] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[10] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[22] = colours();
+			s.rotate(-90);
+			g.rotate(300);
+			g.rotate(-300);
+			g.rotate(300);
+			g.rotate(-300);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[36] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[32] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[28] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[20] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[8] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[12] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[16] = colours();
+			s.rotate(-90);
+			p.rotate(45);
+			s.rotate(90);
+			cubeArray[24] = colours();
+			s.rotate(-90);
 		}
-	}
+	}*/
 	
 	private static String colours()	//ordnet die richtige farbe zu
 	{
@@ -446,7 +650,7 @@ public class Main
     // Prime, gegen den Uhrzeigersinn
     
      
-    private static String[] wE(String cubeArray[],String tauschArray[]) // wE= white Edges
+    private static void wE(String cubeArray[],String tauschArray[]) // wE= white Edges
 	{
 		{																		// Klammer fuer die Uebersicht
 			if(cubeArray[12] == cubeArray[7] && cubeArray[7] == cubeArray[12])
@@ -992,8 +1196,6 @@ public class Main
 				f2(cubeArray, tauschArray);
 			}
 		}
-		
-		return cubeArray;
 	}
     
     private static void wC(String cubeArray[],String tauschArray[]) // white Corners
@@ -1411,8 +1613,8 @@ public class Main
         
     
 	private static void oll(String cubeArray[],String tauschArray[]){
-		while(cubeArray[0] != "yellow" && cubeArray[1] != "yellow" && cubeArray[2] != "yellow" && cubeArray[3] != "yellow" && 
-				cubeArray[4] != "yellow" && cubeArray[5] != "yellow" && cubeArray[6] != "yellow" && cubeArray[7] != "yellow"){
+		while(cubeArray[0] != "yellow" || cubeArray[1] != "yellow" || cubeArray[2] != "yellow" || cubeArray[3] != "yellow" || 
+				cubeArray[4] != "yellow" || cubeArray[5] != "yellow" || cubeArray[6] != "yellow" || cubeArray[7] != "yellow"){
 			int x = 0;
 			while(x > 4){
 			int i = 0;
@@ -1507,9 +1709,9 @@ public class Main
 	{	
 		int x = 0;
 		pll:
-		while(x > 4){
+		while(x < 4){
 		int i = 0;
-		while(i > 4){
+		while(i < 4){
 						
 		//PLL 01
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
