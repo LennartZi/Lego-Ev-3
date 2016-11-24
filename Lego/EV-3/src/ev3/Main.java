@@ -1624,104 +1624,104 @@ public class Main
 				if(cubeArray[0] == "yellow" && cubeArray[1] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 					&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[17] == "yellow"){
 					//(R'2 D) (R' U2) (R D') (R' U2 R')
-					r2(cubeArray, tauschArray);
-					d(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					dPrime(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+				d(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				dPrime(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 05
 				if(cubeArray[1] == "yellow" && cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
-						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[19] == "yellow"){
+					&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[19] == "yellow"){
 					//(Rw U R' U') (L' U R U')
-					l(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					lPrime(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 06
 				if(cubeArray[1] == "yellow" && cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[8] == "yellow"){
 					//F' (Rw U R' U') (L' U R)
-					fPrime(cubeArray, tauschArray);
-					l(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					lPrime(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
 				}
 				
 				//OLL 07
 				if(cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
 					&& cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[18] == "yellow" && cubeArray[19] == "yellow"){
 					//(R U R' U) (R U'2 R')
-					r(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 08
 				if(cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
 					&& cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[11] == "yellow" && cubeArray[8] == "yellow"){
 					//(L' U' L U') (L' U2 L)
-					lPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					l(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					lPrime(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					l(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				lPrime(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				l(cubeArray, tauschArray);
 				}
 				
 				//OLL 09
 				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
 					&& cubeArray[8] == "yellow" && cubeArray[12] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow"){
 					//(R U'2) (R'2 U') (R2 U') (R'2 U'2 R)
-					r(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					r2(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					r2(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					r2(cubeArray, tauschArray);
-					u2(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				r2(cubeArray, tauschArray);
+				u2(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
 				}
 				
 				//OLL 010
 				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
 					&& cubeArray[9] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow" && cubeArray[19] == "yellow"){
 					//F (R U R' U') (R U R' U') (R U R' U') F'
-					f(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					r(cubeArray, tauschArray);
-					u(cubeArray, tauschArray);
-					rPrime(cubeArray, tauschArray);
-					uPrime(cubeArray, tauschArray);
-					fPrime(cubeArray, tauschArray);
+				f(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				fPrime(cubeArray, tauschArray);
 				}
 				drehenGanz(cubeArray, tauschArray);
 				i++;
@@ -1734,53 +1734,52 @@ public class Main
 		//OLL 2Look 1
 		if(cubeArray[12] == "yellow" && cubeArray[13] == "yellow" && cubeArray[14] == "yellow" && cubeArray[15] == "yellow"){
 			//F R U R' U' F' Fw R U R' U' Fw'
-			f(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			fPrime(cubeArray, tauschArray);
-			b(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			bPrime(cubeArray, tauschArray);
+		f(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		fPrime(cubeArray, tauschArray);
+		b(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		bPrime(cubeArray, tauschArray);
 		}				
 		
 		//OLL 2Look 2.1
 		if(cubeArray[7] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[13] == "yellow"){
 			//F R U R' U' F'
-			f(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			fPrime(cubeArray, tauschArray);
-			
+		f(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		fPrime(cubeArray, tauschArray);	
 		}
 		
 		//OLL 2Look 2.2
 		if(cubeArray[4] == "yellow" && cubeArray[6] == "yellow" && cubeArray[12] == "yellow" && cubeArray[14] == "yellow"){
 			drehenGanz(cubeArray, tauschArray);
 			//F R U R' U' F'
-			f(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			fPrime(cubeArray, tauschArray);
+		f(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		fPrime(cubeArray, tauschArray);
 		}
 		
 		//OLL 2Look 3
 			if(cubeArray[6] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[12] == "yellow"){
 				//Fw R U R' U' Fw'
-				r(cubeArray, tauschArray);
-				r(cubeArray, tauschArray);
-				u(cubeArray, tauschArray);
-				rPrime(cubeArray, tauschArray);
-				uPrime(cubeArray, tauschArray);
-				bPrime(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		bPrime(cubeArray, tauschArray);
 		}
 	}
 
@@ -1794,118 +1793,118 @@ public class Main
 						
 		//PLL 01
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
-				&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
-				&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
-				&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
-				//R' U2 R2 U' L' U R' U' L U R' U2 R
-			rPrime(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			r2(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			lPrime(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			l(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
+			&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+			&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+			&& cubeArray[16] == cubeArray[48] && cubeArray[10] == cubeArray[48]){
+			//R' U2 R2 U' L' U R' U' L U R' U2 R
+		rPrime(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		r2(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		lPrime(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		l(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
 		}
 		
 		//PLL 02
 		if(cubeArray[11] == cubeArray[48] && cubeArray[19] == cubeArray[48]
-				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
-				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
-				&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
-				//R' U2 R U' L' U R U' L U R2 U2 R
-			rPrime(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			lPrime(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			l(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			r2(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
+			&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
+			&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
+			&& cubeArray[9] == cubeArray[51] && cubeArray[18] == cubeArray[51]){
+			//R' U2 R U' L' U R U' L U R2 U2 R
+		rPrime(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		lPrime(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		l(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		r2(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
 		}
 		
 		//PLL 03
 		if(cubeArray[9] == cubeArray[48] && cubeArray[19] == cubeArray[48]
-				&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
-				&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
-				&& cubeArray[16] == cubeArray[51] && cubeArray[10] == cubeArray[51]){
-				//(r' R' U') (L D' L' U L) (R U' R' D R) U
-			lPrime(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			l(cubeArray, tauschArray);
-			dPrime(cubeArray, tauschArray);
-			lPrime(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			l(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			d(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
+			&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
+			&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
+			&& cubeArray[16] == cubeArray[51] && cubeArray[10] == cubeArray[51]){
+			//(r' R' U') (L D' L' U L) (R U' R' D R) U
+		lPrime(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		l(cubeArray, tauschArray);
+		dPrime(cubeArray, tauschArray);
+		lPrime(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		l(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		d(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
 		}
 		
 
 		//PLL 04
 		if(cubeArray[15] == cubeArray[48] 
-				&& cubeArray[14] == cubeArray[49]
-				&& cubeArray[13] == cubeArray[50]
-				&& cubeArray[12] == cubeArray[51]){
-				//M2 U M2 U M' U2 M2 U2 M' U2
-			m2(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			m2(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			mPrime(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			m2(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			mPrime(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
+			&& cubeArray[14] == cubeArray[49]
+			&& cubeArray[13] == cubeArray[50]
+			&& cubeArray[12] == cubeArray[51]){
+			//M2 U M2 U M' U2 M2 U2 M' U2
+		m2(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		m2(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		mPrime(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		m2(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		mPrime(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
 			}
 		
 		//PLL 05
 		if(cubeArray[14] == cubeArray[48] 
-				&& cubeArray[15] == cubeArray[49]
-				&& cubeArray[12] == cubeArray[50]
-				&& cubeArray[13] == cubeArray[51]){
-				//M2 U M2 U2 M2 U M2
-			m2(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			m2(cubeArray, tauschArray);
-			u2(cubeArray, tauschArray);
-			m2(cubeArray, tauschArray);
-			u(cubeArray, cubeArray);
-			m2(cubeArray, tauschArray);
+			&& cubeArray[15] == cubeArray[49]
+			&& cubeArray[12] == cubeArray[50]
+			&& cubeArray[13] == cubeArray[51]){
+			//M2 U M2 U2 M2 U M2
+		m2(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		m2(cubeArray, tauschArray);
+		u2(cubeArray, tauschArray);
+		m2(cubeArray, tauschArray);
+		u(cubeArray, cubeArray);
+		m2(cubeArray, tauschArray);
 			}
 		
 		//PLL 06
 		if(cubeArray[14] == cubeArray[48] 
-				&& cubeArray[12] == cubeArray[49]
-				&& cubeArray[13] == cubeArray[50]
-				&& cubeArray[15] == cubeArray[51]){
-				//R U' R U R U R U' R' U' R2
-			r(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			u(cubeArray, tauschArray);
-			r(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
-			rPrime(cubeArray, tauschArray);
-			uPrime(cubeArray, tauschArray);
+			&& cubeArray[12] == cubeArray[49]
+			&& cubeArray[13] == cubeArray[50]
+			&& cubeArray[15] == cubeArray[51]){
+			//R U' R U R U R U' R' U' R2
+		r(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		u(cubeArray, tauschArray);
+		r(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
+		rPrime(cubeArray, tauschArray);
+		uPrime(cubeArray, tauschArray);
 			r2(cubeArray, tauschArray);
 			}
 		
