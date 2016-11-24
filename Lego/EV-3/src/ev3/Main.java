@@ -1,3 +1,4 @@
+package ev3;
 import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -8,7 +9,7 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.SampleProvider;
 
-public class test 
+public class Main 
 {
 	static RegulatedMotor p = new EV3MediumRegulatedMotor(MotorPort.A);	//die (p)lattform
 	static RegulatedMotor g = new EV3LargeRegulatedMotor(MotorPort.B);	//das (g)reifding
@@ -17,7 +18,7 @@ public class test
 	public static void main(String[] args)
 	{
 		String[] cubeArray = new String[54];	// 54 oberflaechen mit Farben
-		String[] tauschArray = new String[54];	// Array zum temporaeren speichern beim drehen
+		String[] tauschArray = new String[54];	// Array zum temporaeren speichern beim drehen/kippen
 		
 		cubeArray [48] = "green";	//die mitten werden festgelegt
 		cubeArray [49] = "red";
@@ -26,7 +27,7 @@ public class test
 		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";		
 		
-		//scan(cubeArray);	//unfertig
+		scan(cubeArray);	//unfertig
 		wE(cubeArray, tauschArray);
 		wC(cubeArray, tauschArray);
 		kippen(cubeArray, tauschArray);
@@ -35,38 +36,38 @@ public class test
 		pll(cubeArray, tauschArray);
 	}
 	
-	/*private static void scan(String cubeArray[])	//Unfertig
+	private static void scan(String cubeArray[])	//Unfertig
 	{
 		for(int i=0; i < cubeArray.length;)
 		{
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[2] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[5] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[1] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[4] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[0] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[7] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[3] = colours();
-			s.rotate(-90)
+			s.rotate(-90);
 			p.rotate(45);
 			s.rotate(90);
 			cubeArray[6] = colours();
@@ -245,7 +246,7 @@ public class test
 			cubeArray[24] = colours();
 			s.rotate(-90);
 		}
-	}*/
+	}
 	
 	private static String colours()	//ordnet die richtige farbe zu
 	{
@@ -628,11 +629,11 @@ public class test
     	drehen(cubeArray, tauschArray);
     }
     
-    private static void m(String cubeArray[],String tauschArray[])
+    /*private static void m(String cubeArray[],String tauschArray[])
     {
     	r(cubeArray, tauschArray);
     	lPrime(cubeArray, tauschArray);
-    }
+    }*/
     
     private static void mPrime(String cubeArray[],String tauschArray[])
     {
@@ -1623,49 +1624,104 @@ public class test
 				if(cubeArray[0] == "yellow" && cubeArray[1] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 					&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[17] == "yellow"){
 					//(R'2 D) (R' U2) (R D') (R' U2 R')
-					
+					r2(cubeArray, tauschArray);
+					d(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					dPrime(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 05
 				if(cubeArray[1] == "yellow" && cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[19] == "yellow"){
 					//(Rw U R' U') (L' U R U')
-					
+					l(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					lPrime(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 06
 				if(cubeArray[1] == "yellow" && cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 						&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[8] == "yellow"){
 					//F' (Rw U R' U') (L' U R)
-					
+					fPrime(cubeArray, tauschArray);
+					l(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					lPrime(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
 				}
 				
 				//OLL 07
 				if(cubeArray[3] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
 					&& cubeArray[7] == "yellow" && cubeArray[17] == "yellow" && cubeArray[18] == "yellow" && cubeArray[19] == "yellow"){
 					//(R U R' U) (R U'2 R')
-					
+					r(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
 				}
 				
 				//OLL 08
 				if(cubeArray[2] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow"
 					&& cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[11] == "yellow" && cubeArray[8] == "yellow"){
 					//(L' U' L U') (L' U2 L)
-					
+					lPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					l(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					lPrime(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					l(cubeArray, tauschArray);
 				}
 				
 				//OLL 09
 				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
 					&& cubeArray[8] == "yellow" && cubeArray[12] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow"){
 					//(R U'2) (R'2 U') (R2 U') (R'2 U'2 R)
-					
+					r(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					r2(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					r2(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					r2(cubeArray, tauschArray);
+					u2(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
 				}
 				
 				//OLL 010
 				if(cubeArray[4] == "yellow" && cubeArray[5] == "yellow" && cubeArray[6] == "yellow" && cubeArray[7] == "yellow"
 					&& cubeArray[9] == "yellow" && cubeArray[17] == "yellow" && cubeArray[11] == "yellow" && cubeArray[19] == "yellow"){
 					//F (R U R' U') (R U R' U') (R U R' U') F'
-					
+					f(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					r(cubeArray, tauschArray);
+					u(cubeArray, tauschArray);
+					rPrime(cubeArray, tauschArray);
+					uPrime(cubeArray, tauschArray);
+					fPrime(cubeArray, tauschArray);
 				}
 				drehenGanz(cubeArray, tauschArray);
 				i++;
@@ -1678,12 +1734,29 @@ public class test
 		//OLL 2Look 1
 		if(cubeArray[12] == "yellow" && cubeArray[13] == "yellow" && cubeArray[14] == "yellow" && cubeArray[15] == "yellow"){
 			//F R U R' U' F' Fw R U R' U' Fw'
-			
+			f(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			fPrime(cubeArray, tauschArray);
+			b(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			bPrime(cubeArray, tauschArray);
 		}				
 		
 		//OLL 2Look 2.1
 		if(cubeArray[7] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[13] == "yellow"){
 			//F R U R' U' F'
+			f(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			fPrime(cubeArray, tauschArray);
 			
 		}
 		
@@ -1691,17 +1764,23 @@ public class test
 		if(cubeArray[4] == "yellow" && cubeArray[6] == "yellow" && cubeArray[12] == "yellow" && cubeArray[14] == "yellow"){
 			drehenGanz(cubeArray, tauschArray);
 			//F R U R' U' F'
-			
+			f(cubeArray, tauschArray);
+			r(cubeArray, tauschArray);
+			u(cubeArray, tauschArray);
+			rPrime(cubeArray, tauschArray);
+			uPrime(cubeArray, tauschArray);
+			fPrime(cubeArray, tauschArray);
 		}
 		
 		//OLL 2Look 3
-		int x = 0;
-		while(x < 4){
 			if(cubeArray[6] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[12] == "yellow"){
 				//Fw R U R' U' Fw'
-				break;
-			}
-			x++;
+				r(cubeArray, tauschArray);
+				r(cubeArray, tauschArray);
+				u(cubeArray, tauschArray);
+				rPrime(cubeArray, tauschArray);
+				uPrime(cubeArray, tauschArray);
+				bPrime(cubeArray, tauschArray);
 		}
 	}
 
