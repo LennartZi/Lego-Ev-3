@@ -349,6 +349,7 @@ public class Main
 				cubeArray [i] = tauschArray[i-1];
 			}
 		}
+		p.setAcceleration(4500);
 		g.rotate(45);
 		p.rotate(-95);	//das physische drehen
 		p.rotate(5);
