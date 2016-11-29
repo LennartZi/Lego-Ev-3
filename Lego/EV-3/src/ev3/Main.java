@@ -27,7 +27,7 @@ public class Main
 		cubeArray [52] = "white";
 		cubeArray [53] = "yellow";		
 		
-		scan(cubeArray);	//unfertig
+		scan(cubeArray);
 		wE(cubeArray, tauschArray);
 		wC(cubeArray, tauschArray);
 		kippen(cubeArray, tauschArray);
