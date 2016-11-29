@@ -349,6 +349,9 @@ public class Main
 				cubeArray [i] = tauschArray[i-1];
 			}
 		}
+		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
+		p.rotate(-95);	//das physische drehen
+		p.rotate(5);
 	}
 	
 	private static void drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
