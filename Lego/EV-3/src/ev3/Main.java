@@ -330,6 +330,27 @@ public class Main
 		g.rotate(-45);
 	}
 	
+	private static void drehenBack(String cubeArray[], String tauschArray[])
+	{
+		int j = 0;
+		for(int i = 0; i < cubeArray.length; i++)
+		{	
+			tauschArray[i] = cubeArray[i];
+		}
+		for (int i = 47; i > 27; i--)
+		{
+			j++;
+			if(j % 4 == 0)
+			{
+				cubeArray [i] = tauschArray [i+3];
+			}
+			else
+			{
+				cubeArray [i] = tauschArray[i-1];
+			}
+		}
+	}
+	
 	private static void drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
 	{
 		int j = 0; 
@@ -433,9 +454,7 @@ public class Main
     {
 	    drehenGanz(cubeArray, tauschArray);
 	    kippen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
+	    drehenBack(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    kippen(cubeArray, tauschArray);
@@ -471,9 +490,7 @@ public class Main
 	    drehenGanz(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    kippen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
+	    drehenBack(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    kippen(cubeArray, tauschArray);
@@ -516,9 +533,7 @@ public class Main
     private static void l(String cubeArray[],String tauschArray[]) 
     {
 	    kippen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
-	    drehen(cubeArray, tauschArray);
+	    drehenBack(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    drehenGanz(cubeArray, tauschArray);
 	    kippen(cubeArray, tauschArray);
@@ -554,9 +569,7 @@ public class Main
     	drehenGanz(cubeArray, tauschArray);
     	drehenGanz(cubeArray, tauschArray);
     	kippen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
+    	drehenBack(cubeArray, tauschArray);
     	drehenGanz(cubeArray, tauschArray);
     	drehenGanz(cubeArray, tauschArray);
     	kippen(cubeArray, tauschArray);
@@ -589,9 +602,7 @@ public class Main
     {
     	kippen(cubeArray, tauschArray);
     	kippen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
+    	drehenBack(cubeArray, tauschArray);
     	kippen(cubeArray, tauschArray);
     	kippen(cubeArray, tauschArray);        
     }
@@ -617,9 +628,7 @@ public class Main
 	
     private static void d(String cubeArray[],String tauschArray[])
     {
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
-    	drehen(cubeArray, tauschArray);
+    	drehenBack(cubeArray, tauschArray);
     }
     
     private static void dPrime(String cubeArray[], String tauschArray[])
