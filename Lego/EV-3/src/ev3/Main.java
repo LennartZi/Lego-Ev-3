@@ -1,4 +1,5 @@
 package ev3;
+
 import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -8,6 +9,7 @@ import lejos.hardware.port.Port;
 import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.SampleProvider;
+import lejos.utility.Delay;
 
 	//Lennart
 
@@ -20,6 +22,12 @@ public class Main
 
 	public static void main(String[] args)
 	{
+		p.setAcceleration(5000);
+		p.setSpeed(600);
+		
+		g.setAcceleration(3000);
+		g.setSpeed(300);
+		
 		String[] cubeArray = new String[54];	// 54 oberflaechen mit Farben
 		String[] tauschArray = new String[54];	// Array zum temporaeren speichern beim drehen/kippen
 		
@@ -309,6 +317,9 @@ public class Main
 
 	private static void drehen(String cubeArray[], String tauschArray[])	//dreht unten|zum benutzen: "drehen(cubeArray, tauschArray);"
 	{
+		if(k==720){
+			k=0;
+		}
 		k = k+90;
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
@@ -327,15 +338,17 @@ public class Main
 				cubeArray [i] = tauschArray[i+1];
 			}
 		}
-		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
 		g.rotate(45);
 		p.rotateTo(k+3);	//das physische drehen
 		p.rotate(-3);
 		g.rotate(-45);
 	}
 
-	private static void drehenBack(String cubeArray[], String tauschArray[])
+	private static void drehenBack(String cubeArray[], String tauschArray[])	//dreht unten aber anders|zum benutzen: "drehenBack(cubeArray, tauschArray);"
 	{
+		if(k==720){
+			k=0;
+		}
 		k = k-90;
 		int j = 0;
 		for(int i = 0; i < cubeArray.length; i++)
@@ -354,7 +367,6 @@ public class Main
 				cubeArray [i] = tauschArray[i-1];
 			}
 		}
-		p.setAcceleration(4500);
 		g.rotate(45);
 		p.rotate(k-3);	//das physische drehen
 		p.rotate(3);
@@ -363,6 +375,9 @@ public class Main
 
 	private static void drehenGanz(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
 	{
+		if(k==720){
+			k=0;
+		}
 		k = k+90;
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
@@ -382,13 +397,15 @@ public class Main
 				cubeArray [i] = tauschArray[i+1];
 			}
 		}
-		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
 		p.rotateTo(k+3);	//das physische drehen
 		p.rotate(-3);
 	}
 
-	private static void drehenGanzBack(String cubeArray[], String tauschArray[])	//dreht den ganzen cube|zum benutzen: "drehenGanz(cubeArray, tauschArray);"
+	private static void drehenGanzBack(String cubeArray[], String tauschArray[])	//dreht den ganzen cube aber anders|zum benutzen: "drehenGanzBack(cubeArray, tauschArray);"
 	{
+		if(k==720){
+			k=0;
+		}
 		k = k-90;
 		int j = 0; 
 		for(int i = 0; i < cubeArray.length; i++)
@@ -408,12 +425,11 @@ public class Main
 				cubeArray [i] = tauschArray[i-1];
 			}
 		}
-		p.setAcceleration(4500);	//die beschleunigung wird auf 4500 grad/sekunde/sekunde runtergesetzt (standart 6000)
 		p.rotateTo(k-3);	//das physische drehen
 		p.rotate(3);
 	}
 
-	private static void kippen(String cubeArray[], String tauschArray[])	//kippt (welche bewegung zum drehen??)|zum benutzen: "kippen(cubeArray, tauschArray);"
+	private static void kippen(String cubeArray[], String tauschArray[])	//kippt |zum benutzen: "kippen(cubeArray, tauschArray);"
 	{
 		for(int i = 0; i < cubeArray.length; i++)
 		{			
@@ -483,6 +499,7 @@ public class Main
 		cubeArray [23] = tauschArray [15];
 		
 		g.rotate(300);
+		Delay.msDelay(50);
 		g.rotate(-300);
 	}
 
@@ -682,7 +699,6 @@ public class Main
 
     // f=Front, b=Back, l=Left, r=Right, u=Up, d=Down 
     // Prime, gegen den Uhrzeigersinn
-
 
     private static void wE(String cubeArray[],String tauschArray[]) // wE= white Edges
 	{
