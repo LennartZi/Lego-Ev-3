@@ -46,9 +46,13 @@ public class Main
 		mE(cubeArray, tauschArray);
 		oll(cubeArray, tauschArray);
 		pll(cubeArray, tauschArray);
+		LCD.drawString("fertig", 2, 2);
+		Delay.msDelay(1000);
 	}
 
-	private static void scan(String cubeArray[])
+	//Fabian
+	
+	private static void scan(String cubeArray[])	//das fahren des RGB-Sensors
 	{
 			p.rotate(45);
 			s.rotate(90);
@@ -262,7 +266,7 @@ public class Main
 			g.rotate(-300);
 	}
 
-	private static String colours()	//ordnet die richtige farbe zu	
+	private static String colours()	//ordnet den steinen ihre farbe zu
 	{
 		Port sensorPort = LocalEV3.get().getPort("S1");            
 		EV3ColorSensor colorSensor = new EV3ColorSensor(sensorPort);
@@ -322,7 +326,7 @@ public class Main
 		}
 		k = k+90;
 		int j = 0; 
-		for(int i = 0; i < cubeArray.length; i++)
+		for(int i = 0; i < cubeArray.length; i++)	//alle inhalte des cubeArray's werden auf den tauschArray übertragen 
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
@@ -338,20 +342,20 @@ public class Main
 				cubeArray [i] = tauschArray[i+1];
 			}
 		}
-		g.rotate(45);
-		p.rotateTo(k+3);	//das physische drehen
+		g.rotate(45);	//das physische drehen
+		p.rotateTo(k+3);
 		p.rotate(-3);
 		g.rotate(-45);
 	}
 
-	private static void drehenBack(String cubeArray[], String tauschArray[])	//dreht unten aber anders|zum benutzen: "drehenBack(cubeArray, tauschArray);"
+	private static void drehenBack(String cubeArray[], String tauschArray[])	//dreht unten aber rückwärts|zum benutzen: "drehenBack(cubeArray, tauschArray);"
 	{
 		if(k==720){
 			k=0;
 		}
 		k = k-90;
 		int j = 0;
-		for(int i = 0; i < cubeArray.length; i++)
+		for(int i = 0; i < cubeArray.length; i++)	//alle inhalte des cubeArray's werden auf den tauschArray übertragen 
 		{	
 			tauschArray[i] = cubeArray[i];
 		}
@@ -380,7 +384,7 @@ public class Main
 		}
 		k = k+90;
 		int j = 0; 
-		for(int i = 0; i < cubeArray.length; i++)
+		for(int i = 0; i < cubeArray.length; i++)	//alle inhalte des cubeArray's werden auf den tauschArray übertragen 
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
@@ -401,14 +405,14 @@ public class Main
 		p.rotate(-3);
 	}
 
-	private static void drehenGanzBack(String cubeArray[], String tauschArray[])	//dreht den ganzen cube aber anders|zum benutzen: "drehenGanzBack(cubeArray, tauschArray);"
+	private static void drehenGanzBack(String cubeArray[], String tauschArray[])	//dreht den ganzen cube aber rückwärts|zum benutzen: "drehenGanzBack(cubeArray, tauschArray);"
 	{
 		if(k==720){
 			k=0;
 		}
 		k = k-90;
 		int j = 0; 
-		for(int i = 0; i < cubeArray.length; i++)
+		for(int i = 0; i < cubeArray.length; i++)	//alle inhalte des cubeArray's werden auf den tauschArray übertragen 
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
@@ -431,7 +435,7 @@ public class Main
 
 	private static void kippen(String cubeArray[], String tauschArray[])	//kippt |zum benutzen: "kippen(cubeArray, tauschArray);"
 	{
-		for(int i = 0; i < cubeArray.length; i++)
+		for(int i = 0; i < cubeArray.length; i++)	//alle inhalte des cubeArray's werden auf den tauschArray übertragen 
 		{			
 			tauschArray[i] = cubeArray[i];
 		}
@@ -2240,13 +2244,13 @@ public class Main
 
     //Lennart   
 
-	private static void oll(String cubeArray[],String tauschArray[]){	//2-Look OLL
-		while(cubeArray[0] != "yellow" || cubeArray[1] != "yellow" || cubeArray[2] != "yellow" || cubeArray[3] != "yellow" || 
+	private static void oll(String cubeArray[],String tauschArray[]){	//führt die Algorithmen von 2-Look-Oll aus
+		while(cubeArray[0] != "yellow" || cubeArray[1] != "yellow" || cubeArray[2] != "yellow" || cubeArray[3] != "yellow" ||	//überprüft ob alle steine die Gelb seien sollen Gelb sind wenn dies nicht der fall ist wird 2-Look-OLL ausgeführt
 				cubeArray[4] != "yellow" || cubeArray[5] != "yellow" || cubeArray[6] != "yellow" || cubeArray[7] != "yellow"){
 			int x = 0;
 			while(x > 4){
 			int i = 0;
-			while(i < 4){
+			while(i < 4){	//überprüft in welcher permutation die Steine liegen
 				//OLL 04
 				if(cubeArray[0] == "yellow" && cubeArray[1] == "yellow" && cubeArray[4] == "yellow" && cubeArray[5] == "yellow"
 					&& cubeArray[6] == "yellow" && cubeArray[7] == "yellow" && cubeArray[9] == "yellow" && cubeArray[17] == "yellow"){
@@ -2350,15 +2354,15 @@ public class Main
 					uPrime(cubeArray, tauschArray);
 					fPrime(cubeArray, tauschArray);
 				}
-				drehenGanz(cubeArray, tauschArray);
+				drehenGanz(cubeArray, tauschArray);	//dreht den cube einmal falls keine einfache Permutation gefunden wurde
 				i++;
 				}
-			u(cubeArray,tauschArray);
+			u(cubeArray,tauschArray);	//dreht einmal die obere Layer des cubes falls beim vierfachen drehen des cubes keine einfache Permution gefunden wurde
 			x++;
 			}
 		}
 		
-		//OLL 2Look 1
+		//überprüft ob eine 2-Look-OLL Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[12] == "yellow" && cubeArray[13] == "yellow" && cubeArray[14] == "yellow" && cubeArray[15] == "yellow"){
 			//F R U R' U' F' Fw R U R' U' Fw'
 			f(cubeArray, tauschArray);
@@ -2375,7 +2379,7 @@ public class Main
 			bPrime(cubeArray, tauschArray);
 		}				
 		
-		//OLL 2Look 2.1
+		//überprüft ob eine 2-Look-OLL 2.1 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[7] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[13] == "yellow"){
 			//F R U R' U' F'
 			f(cubeArray, tauschArray);
@@ -2387,7 +2391,7 @@ public class Main
 			
 		}
 		
-		//OLL 2Look 2.2
+		//überprüft ob eine 2-Look-OLL 2.2 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[4] == "yellow" && cubeArray[6] == "yellow" && cubeArray[12] == "yellow" && cubeArray[14] == "yellow"){
 			drehenGanz(cubeArray, tauschArray);
 			//F R U R' U' F'
@@ -2399,7 +2403,7 @@ public class Main
 			fPrime(cubeArray, tauschArray);
 		}
 		
-		//OLL 2Look 3
+		//überprüft ob eine 2-Look-OLL 3 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 			if(cubeArray[6] == "yellow" && cubeArray[5] == "yellow" && cubeArray[15] == "yellow" && cubeArray[12] == "yellow"){
 				//Fw R U R' U' Fw'
 				r(cubeArray, tauschArray);
@@ -2419,7 +2423,7 @@ public class Main
 		int i = 0;
 		while(i < 4){
 						
-		//PLL 01
+		//überprüft ob eine PLL 01 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[17] == cubeArray[51] && cubeArray[8] == cubeArray[51]
 				&& cubeArray[19] == cubeArray[50] && cubeArray[11] == cubeArray[50]
 				&& cubeArray[9] == cubeArray[49] && cubeArray[18] == cubeArray[49]
@@ -2440,7 +2444,7 @@ public class Main
 			r(cubeArray, tauschArray);
 		}
 		
-		//PLL 02
+		//überprüft ob eine PLL 02 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[11] == cubeArray[48] && cubeArray[19] == cubeArray[48]
 				&& cubeArray[17] == cubeArray[49] && cubeArray[8] == cubeArray[49]
 				&& cubeArray[10] == cubeArray[50] && cubeArray[16] == cubeArray[50]
@@ -2461,7 +2465,7 @@ public class Main
 			r(cubeArray, tauschArray);
 		}
 		
-		//PLL 03
+		//überprüft ob eine PLL 03 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[9] == cubeArray[48] && cubeArray[19] == cubeArray[48]
 				&& cubeArray[8] == cubeArray[49] && cubeArray[18] == cubeArray[49]
 				&& cubeArray[17] == cubeArray[50] && cubeArray[11] == cubeArray[50]
@@ -2484,7 +2488,7 @@ public class Main
 		}
 		
 
-		//PLL 04
+		//überprüft ob eine PLL 04 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[15] == cubeArray[48] 
 				&& cubeArray[14] == cubeArray[49]
 				&& cubeArray[13] == cubeArray[50]
@@ -2502,7 +2506,7 @@ public class Main
 			u2(cubeArray, tauschArray);
 			}
 		
-		//PLL 05
+		//überprüft ob eine PLL 05 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[14] == cubeArray[48] 
 				&& cubeArray[15] == cubeArray[49]
 				&& cubeArray[12] == cubeArray[50]
@@ -2517,7 +2521,7 @@ public class Main
 			m2(cubeArray, tauschArray);
 			}
 		
-		//PLL 06
+		//überprüft ob eine PLL 06 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[14] == cubeArray[48] 
 				&& cubeArray[12] == cubeArray[49]
 				&& cubeArray[13] == cubeArray[50]
@@ -2536,7 +2540,7 @@ public class Main
 			r2(cubeArray, tauschArray);
 			}
 		
-		//PLL 07
+		//überprüft ob eine PLL 07 Permutation vorliegt und führt den entsprechenden Algorithmus aus
 		if(cubeArray[13] == cubeArray[48] 
 			&& cubeArray[14] == cubeArray[49]
 			&& cubeArray[12] == cubeArray[50]
@@ -2555,48 +2559,43 @@ public class Main
 		rPrime(cubeArray, tauschArray);			
 		}
 		
-		//ende
-		if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[48]
+		//ende 
+		if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[48]	//Überprüft ob die letze Layer des cube zu gelöst ist
 				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[49]
 				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[50]
 				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[51]){
-			
-			LCD.drawString("fertig", 2, 2);
-			break pll;
+			break pll;	//Unterbricht die suche nach PLL Permutationen sobald der cube Gelöst ist
 		}
 		
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[49]
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[49]	//Überprüft ob die letze Layer des cube's durch ein drehung zu lösen ist
 				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[50]
 				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[51]
 				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[48]){
 			u(cubeArray,tauschArray);
-			LCD.drawString("fertig", 2, 2);
-			break pll;
+			break pll;	//Unterbricht die suche nach PLL Permutationen sobald der cube Gelöst ist
 		}
 		
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[50]
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[50]	//Überprüft ob die letze Layer des cube's durch zwei drehungen zu lösen ist
 				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[51]
 				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[48]
 				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[49]){
 			u(cubeArray,tauschArray);
 			u(cubeArray,tauschArray);
-			LCD.drawString("fertig", 2, 2);
-			break pll;
+			break pll;	//Unterbricht die suche nach PLL Permutationen sobald der cube Gelöst ist
 		}
 		
-		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[51]
+		else if(cubeArray[8] == cubeArray[12] && cubeArray[12] == cubeArray[16] && cubeArray[16] == cubeArray[51]	//Überprüft ob die letze Layer des cube's durch ein drehung zu lösen ist
 				&& cubeArray[9] == cubeArray[13] && cubeArray[13] == cubeArray[17] && cubeArray[17] == cubeArray[48]
 				&& cubeArray[10] == cubeArray[14] && cubeArray[14] == cubeArray[18] && cubeArray[18] == cubeArray[49]
 				&& cubeArray[11] == cubeArray[15] && cubeArray[15] == cubeArray[19] && cubeArray[19] == cubeArray[50]){
 			uPrime(cubeArray,tauschArray);
-			LCD.drawString("fertig", 2, 2);
-			break pll;
+			break pll;	//Unterbricht die suche nach PLL Permutationen sobald der cube Gelöst ist
 		}
 		
-		drehenGanz(cubeArray, tauschArray);
+		drehenGanz(cubeArray, tauschArray);	//dreht den cube einmal falls keine einfache Permutation gefunden wurde
 		i++;
 		}
-		u(cubeArray,tauschArray);
+		u(cubeArray,tauschArray);	//dreht einmal die obere Layer des cubes falls beim vierfachen drehen des cubes keine einfache Permution gefunden wurde
 		x++;
 		}
 	}
